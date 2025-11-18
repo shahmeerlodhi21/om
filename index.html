@@ -1,1066 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>OnlyModels — OnlyFans Management Agency</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<script>
-		// Prevent flash of unstyled content by keeping key elements hidden until animations initialize
-		try { document.documentElement.classList.add('is-loading'); } catch (e) { /* ignore */ }
-	</script>
-	<header class="site-header">
-		<div class="container header-inner">
-			<a class="logo" href="#">
-				<img src="assets/logo.png" alt="OnlyModels logo" class="logo-img">
-			</a>
 
-			<nav class="nav" id="site-nav">
-				<ul class="nav-list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#clients">Clients</a></li>
-					<li><a href="#blog">Blog</a></li>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Only Models</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div class="logo">
+				<img src="assets/logo.png" alt="Only Models" />
+			</div>
+			<nav>
+				<ul>
+					<li><a class="active" href="#">Home</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Template shop</a></li>
+					<li><a href="#">Hire us</a></li>
 				</ul>
 			</nav>
-
-			<div class="header-ctas">
-				<a class="btn btn-outline" href="#apply">Apply Now</a>
-				<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-			</div>
+			<button class="button">
+				<div class="bg"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 342 208" height="208"
+					width="342" class="splash">
+					<path stroke-linecap="round" stroke-width="3"
+						d="M54.1054 99.7837C54.1054 99.7837 40.0984 90.7874 26.6893 97.6362C13.2802 104.485 1.5 97.6362 1.5 97.6362">
+					</path>
+					<path stroke-linecap="round" stroke-width="3"
+						d="M285.273 99.7841C285.273 99.7841 299.28 90.7879 312.689 97.6367C326.098 104.486 340.105 95.4893 340.105 95.4893">
+					</path>
+					<path stroke-linecap="round" stroke-width="3" stroke-opacity="0.3"
+						d="M281.133 64.9917C281.133 64.9917 287.96 49.8089 302.934 48.2295C317.908 46.6501 319.712 36.5272 319.712 36.5272">
+					</path>
+					<path stroke-linecap="round" stroke-width="3" stroke-opacity="0.3"
+						d="M281.133 138.984C281.133 138.984 287.96 154.167 302.934 155.746C317.908 157.326 319.712 167.449 319.712 167.449">
+					</path>
+					<path stroke-linecap="round" stroke-width="3"
+						d="M230.578 57.4476C230.578 57.4476 225.785 41.5051 236.061 30.4998C246.337 19.4945 244.686 12.9998 244.686 12.9998">
+					</path>
+					<path stroke-linecap="round" stroke-width="3"
+						d="M230.578 150.528C230.578 150.528 225.785 166.471 236.061 177.476C246.337 188.481 244.686 194.976 244.686 194.976">
+					</path>
+					<path stroke-linecap="round" stroke-width="3" stroke-opacity="0.3"
+						d="M170.392 57.0278C170.392 57.0278 173.89 42.1322 169.571 29.54C165.252 16.9478 168.751 2.05227 168.751 2.05227">
+					</path>
+					<path stroke-linecap="round" stroke-width="3" stroke-opacity="0.3"
+						d="M170.392 150.948C170.392 150.948 173.89 165.844 169.571 178.436C165.252 191.028 168.751 205.924 168.751 205.924">
+					</path>
+					<path stroke-linecap="round" stroke-width="3"
+						d="M112.609 57.4476C112.609 57.4476 117.401 41.5051 107.125 30.4998C96.8492 19.4945 98.5 12.9998 98.5 12.9998">
+					</path>
+					<path stroke-linecap="round" stroke-width="3"
+						d="M112.609 150.528C112.609 150.528 117.401 166.471 107.125 177.476C96.8492 188.481 98.5 194.976 98.5 194.976">
+					</path>
+					<path stroke-linecap="round" stroke-width="3" stroke-opacity="0.3"
+						d="M62.2941 64.9917C62.2941 64.9917 55.4671 49.8089 40.4932 48.2295C25.5194 46.6501 23.7159 36.5272 23.7159 36.5272">
+					</path>
+					<path stroke-linecap="round" stroke-width="3" stroke-opacity="0.3"
+						d="M62.2941 145.984C62.2941 145.984 55.4671 161.167 40.4932 162.746C25.5194 164.326 23.7159 174.449 23.7159 174.449">
+					</path>
+				</svg>
+				<div class="wrap"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 221 42" height="42"
+						width="221" class="path">
+						<path stroke-linecap="round" stroke-width="3"
+							d="M182.674 2H203C211.837 2 219 9.16344 219 18V24C219 32.8366 211.837 40 203 40H18C9.16345 40 2 32.8366 2 24V18C2 9.16344 9.16344 2 18 2H47.8855">
+						</path>
+					</svg>
+					<div class="outline"></div>
+					<div class="content"><span class="char state-1"><span data-label="J" style="--i: 1;">J</span><span
+								data-label="o" style="--i: 2;">o</span><span data-label="i" style="--i: 3;">i</span><span
+								data-label="n" style="--i: 4;">n</span><span data-label="T" style="--i: 5;">T</span><span
+								data-label="o" style="--i: 6;">o</span><span data-label="d" style="--i: 7;">d</span><span
+								data-label="a" style="--i: 8;">a</span><span data-label="y" style="--i: 9;">y</span></span>
+						<div class="icon">
+							<div></div>
+						</div><span class="char state-2"><span data-label="J" style="--i: 1;">J</span><span data-label="o"
+								style="--i: 2;">o</span><span data-label="i" style="--i: 3;">i</span><span data-label="n"
+								style="--i: 4;">n</span><span data-label="N" style="--i: 5;">N</span><span data-label="o"
+								style="--i: 6;">o</span><span data-label="w" style="--i: 7;">w</span></span>
+					</div>
+				</div>
+			</button>
 		</div>
 	</header>
 
-	<!-- Animated particles background -->
-	<div class="particles-container" aria-hidden="true">
-		<div class="particle particle-1"></div>
-		<div class="particle particle-2"></div>
-		<div class="particle particle-3"></div>
-		<div class="particle particle-4"></div>
-		<div class="particle particle-5"></div>
-		<div class="particle particle-6"></div>
-		<div class="particle particle-7"></div>
-		<div class="particle particle-8"></div>
-	</div>
-
-	<main>
-		<section class="hero">
-			<div class="hero-media" aria-hidden="true">
-				<video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=60">
-					<source src="https://video.wixstatic.com/video/4f3477_016ce91157294b81bd13abdebb6bfc32/1080p/mp4/file.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-				<div class="hero-overlay" aria-hidden="true"></div>
-				<div class="hero-gradient-1"></div>
-				<div class="hero-gradient-2"></div>
-			</div>
-
-			<!-- Decorative animated blobs (visual depth) -->
-			<div class="hero-decor" aria-hidden="true">
-				<div class="blob blob-1"></div>
-				<div class="blob blob-2"></div>
-				<div class="blob blob-3"></div>
-			</div>
-			<div class="container hero-content">
-				<p class="eyebrow">The #1 OnlyFans Agency in Canada</p>
-				<h1 class="hero-title">ONLYFANS MANAGEMENT AGENCY</h1>
-				<p class="hero-sub">Maximize your OnlyFans success with expert guidance and strategic growth.</p>
-				<div class="hero-actions">
-					<a class="btn btn-primary" href="#apply">Apply Now</a>
-				</div>
-			</div>
-		</section>
-
-		<!-- Split Content Section -->
-		<section class="split-section">
-			<div class="split-container">
-				<div class="split-content">
-					<div class="split-text">
-						<h2 class="split-heading"><span class="word">Push</span> <span class="word">harder,</span> <span class="word">aim</span> <span class="word">higher,</span> <span class="word">become</span> <span class="word">unstoppable</span></h2>
-						<p class="split-para"><span class="line">Unlock your true potential and conquer the OnlyFans game</span> <span class="line">with our expert team by your side. We're here to amplify</span> <span class="line">your growth and maximize your earnings.</span></p>
-						<p class="split-para-bold"><span class="line-bold">Take control of your time and creativity, boost your income —</span> <span class="line-bold">all with our expert support every step of the way.</span></p>
-					</div>
-				</div>
-				<div class="split-image">
-					<div class="image-wrapper">
-						<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&h=1000&fit=crop" alt="Model" class="split-img">
-						<div class="image-overlay"></div>
-						<div class="image-glow"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Vision, Process, Mission Section -->
-		<section class="features-section">
-			<div class="container-wide">
-				<div class="features-grid">
-					<article class="feature-card">
-						<div class="feature-icon">
-							<svg class="icon-eye" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-								<ellipse cx="50" cy="50" rx="45" ry="30" fill="none" stroke="currentColor" stroke-width="3"/>
-								<circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="3"/>
-								<circle cx="50" cy="50" r="8" fill="currentColor"/>
-							</svg>
-						</div>
-						<h3 class="feature-title">Our Vision</h3>
-						<p class="feature-text">We focus on women's beauty and sensuality. Making sure every woman feels empowered and strong.</p>
-					</article>
-
-					<article class="feature-card">
-						<div class="feature-icon">
-							<svg class="icon-document" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-								<rect x="25" y="15" width="50" height="70" rx="5" fill="none" stroke="currentColor" stroke-width="3"/>
-								<line x1="35" y1="30" x2="65" y2="30" stroke="currentColor" stroke-width="3"/>
-								<line x1="35" y1="45" x2="65" y2="45" stroke="currentColor" stroke-width="3"/>
-								<line x1="35" y1="60" x2="55" y2="60" stroke="currentColor" stroke-width="3"/>
-							</svg>
-						</div>
-						<h3 class="feature-title">Our Process</h3>
-						<p class="feature-text">Our team ensures you security, transparency, and efficient management for the accounts we help with growth.</p>
-					</article>
-
-					<article class="feature-card">
-						<div class="feature-icon">
-							<svg class="icon-dollar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-								<circle cx="50" cy="50" r="35" fill="currentColor"/>
-								<text x="50" y="70" font-size="50" font-weight="bold" text-anchor="middle" fill="#231B3B">$</text>
-							</svg>
-						</div>
-						<h3 class="feature-title">Our Mission</h3>
-						<p class="feature-text">We provide personal growth and a place where you can be heard. Your talents can truly shine and achieve your full potential.</p>
-					</article>
-				</div>
-			</div>
-		</section>
-
-		<!-- Stats Section with Phone -->
-		<section class="stats-section">
-			<div class="container-wide">
-				<div class="stats-grid">
-					<div class="stat-item stat-left">
-						<div class="stat-number">+10</div>
-						<div class="stat-label">MODELS</div>
-					</div>
-
-					<div class="phone-mockup">
-						<div class="phone-frame">
-							<div class="phone-notch"></div>
-							<div class="phone-screen">
-								<div class="phone-header">
-									<div class="earnings-title">EARNINGS OVERVIEW</div>
-									<div class="earnings-subtitle">TRACK THE SUCCESSFUL RETURN</div>
-								</div>
-								<div class="phone-graph">
-									<svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
-										<polyline points="10,100 50,90 100,85 150,80 200,60 250,40 290,30" 
-											fill="none" stroke="rgba(255,127,232,0.5)" stroke-width="2"/>
-									</svg>
-								</div>
-								<div class="phone-stats">
-									<div class="stat-row">
-										<span class="stat-date">June 16, 2025 — Aug 16, 2025</span>
-									</div>
-									<div class="stat-row highlight">
-										<span>Tips</span>
-										<span>$0.00</span>
-									</div>
-									<div class="stat-row">
-										<span>Live</span>
-										<span>$140.72</span>
-									</div>
-									<div class="stat-row">
-										<span>Posts</span>
-										<span>$0.00</span>
-									</div>
-									<div class="stat-row">
-										<span>Messages</span>
-										<span>$135.00</span>
-									</div>
-									<div class="stat-row">
-										<span>Referrals</span>
-										<span>$0.00</span>
-									</div>
-									<div class="stat-row">
-										<span>Stream</span>
-										<span>$0.00</span>
-									</div>
-									<div class="stat-row total">
-										<span>TOTAL</span>
-										<span class="total-amount">$2,200.00</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="stat-item stat-right">
-						<div class="stat-number">+942,949$</div>
-						<div class="stat-label">GENERATED IN 2025</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-	</main>
-
-	<footer class="site-footer">
-		<div class="container footer-inner">
-			<div>© <span id="year"></span> OnlyModels — All rights reserved</div>
-			<div class="footer-links">
-				<a href="#privacy">Privacy</a>
-				<a href="#terms">Terms</a>
-			</div>
-		</div>
-	</footer>
-
-	<!-- GSAP core + ScrollTrigger -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
 	<script>
-		console.log('[ANIM] Script loaded');
-		document.getElementById('year').textContent = new Date().getFullYear();
-
-		const navToggle = document.getElementById('navToggle');
-		const nav = document.getElementById('site-nav');
-		const animToggle = document.getElementById('animToggle');
-
-		const systemPrefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		let animationsEnabled = !systemPrefersReduced;
-
-		function updateAnimToggleUI() {
-			if (!animToggle) return;
-			animToggle.setAttribute('aria-pressed', String(animationsEnabled));
-			animToggle.textContent = animationsEnabled ? 'Animations: On' : 'Animations: Off';
-		}
-
-		// Mobile nav toggle
-		if (navToggle) {
-			navToggle.addEventListener('click', () => {
-				nav.classList.toggle('open');
-				navToggle.classList.toggle('open');
-			});
-		}
-
-		window.__masterTimeline = null;
-
-		function splitTitleIntoChars() {
-			const title = document.querySelector('.hero-title');
-			if (!title) return;
-			const text = title.textContent.trim();
-			title.innerHTML = Array.from(text).map(ch => 
-				ch === ' ' ? '<span class="char">&nbsp;</span>' : `<span class="char">${ch}</span>`
-			).join('');
-		}
-
-		function restorePlainTitle() {
-			const title = document.querySelector('.hero-title');
-			if (!title) return;
-			title.innerHTML = title.textContent.replace(/\u00A0/g, ' ');
-			title.style.color = '#fff';
-		}
-
-		function revealFallback() {
-			document.documentElement.classList.remove('is-loading');
-			restorePlainTitle();
-			const all = document.querySelectorAll('.logo-img, .nav-list a, .header-ctas .btn, .hero-overlay, .hero-video, .blob, .eyebrow, .hero-title, .hero-sub, .hero-actions .btn, .card, .section h2, .footer-inner');
-			all.forEach(el => {
-				el.style.opacity = '1';
-				el.style.transform = 'none';
-				el.style.pointerEvents = 'auto';
-			});
-			console.log('[ANIM] Fallback reveal applied');
-		}
-
-		// Safety: reveal after 2s if still loading
-		setTimeout(() => {
-			if (document.documentElement.classList.contains('is-loading')) {
-				console.warn('[ANIM] Safety timeout - revealing page');
-				revealFallback();
-			}
-		}, 2000);
-
-		function initAnimations() {
-			console.log('[ANIM] 🎬 PRO DARK CINEMATIC ANIMATIONS');
-			
-			if (!window.gsap) {
-				console.error('[ANIM] GSAP not loaded!');
-				revealFallback();
-				return null;
-			}
-
-			try {
-				if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
-
-				// ═══════════════════════════════════════════════════════
-				// INITIAL STATES - CINEMATIC DARK ENTRANCE
-				// ═══════════════════════════════════════════════════════
-				
-				gsap.set('body', { backgroundColor: '#000000' });
-				gsap.set('.site-header', { autoAlpha: 0, y: -60 });
-				gsap.set('.logo-img', { opacity: 0, scale: 0, rotation: -180, filter: 'brightness(0) blur(10px)' });
-				gsap.set('.nav-list a', { opacity: 0, y: -50, rotationX: -90, scale: 0.8 });
-				gsap.set('.header-ctas .btn', { opacity: 0, scale: 0, rotation: 180 });
-				gsap.set('.hero-overlay', { opacity: 0 });
-				gsap.set('.hero-video', { opacity: 0, scale: 1.3, filter: 'blur(30px)' });
-				gsap.set('.blob', { opacity: 0, scale: 0.3, filter: 'blur(40px)' });
-				gsap.set('.eyebrow', { opacity: 0, y: 50, scale: 0.7, filter: 'blur(8px)' });
-				gsap.set('.hero-title', { opacity: 0, y: 100, scale: 0.7, rotationX: 45, filter: 'blur(15px)' });
-				gsap.set('.hero-sub', { opacity: 0, y: 80, rotationX: -30, filter: 'blur(10px)' });
-				gsap.set('.hero-actions .btn', { opacity: 0, scale: 0, rotation: -90, y: 50 });
-				gsap.set('.card', { opacity: 0, y: 150, scale: 0.5, rotationY: 60 });
-				gsap.set('.section h2', { opacity: 0, y: 80, scale: 0.8, filter: 'blur(10px)' });
-				gsap.set('.footer-inner', { opacity: 0, y: 60 });
-				
-				// Feature cards
-				gsap.set('.feature-card', { opacity: 0, y: 120, scale: 0.6, rotationY: 45, filter: 'blur(12px)' });
-				gsap.set('.feature-icon', { opacity: 0, scale: 0, rotation: -180 });
-				
-				// Stats section
-				gsap.set('.stats-content', { opacity: 0, x: -150, rotationY: 45 });
-				gsap.set('.phone-frame', { opacity: 0, y: 200, scale: 0.4, rotation: -30 });
-				
-				// Split section
-				gsap.set('.split-content', { opacity: 0, x: -150, filter: 'blur(15px)' });
-				gsap.set('.split-image', { opacity: 0, scale: 0.5, rotation: 30, filter: 'blur(20px)' });
-
-				document.documentElement.classList.remove('is-loading');
-				console.log('[ANIM] 🎭 Dark cinematic states set');
-
-				// ═══════════════════════════════════════════════════════
-				// MASTER CINEMATIC TIMELINE
-				// ═══════════════════════════════════════════════════════
-				
-				const master = gsap.timeline({
-					defaults: { ease: 'power4.out' },
-					onStart: () => console.log('[ANIM] 🎬 Cinematic sequence START'),
-					onComplete: () => console.log('[ANIM] ✨ Cinematic sequence COMPLETE')
-				});
-
-				// Background fade from black to purple
-				master.to('body', { 
-					backgroundColor: '#231B3B', 
-					duration: 2, 
-					ease: 'power2.inOut' 
-				}, 0);
-
-				// ═══════════════════════════════════════════════════════
-				// HEADER - EPIC ENTRANCE
-				// ═══════════════════════════════════════════════════════
-				
-				master.to('.site-header', { 
-					autoAlpha: 1, 
-					y: 0, 
-					duration: 1.2,
-					ease: 'power3.out'
-				}, 0.3);
-				
-				master.to('.logo-img', {
-					opacity: 1,
-					scale: 1,
-					rotation: 0,
-					filter: 'brightness(1) blur(0px)',
-					duration: 1.8,
-					ease: 'elastic.out(1, 0.7)'
-				}, 0.5);
-				
-				master.to('.nav-list a', {
-					opacity: 1,
-					y: 0,
-					rotationX: 0,
-					scale: 1,
-					duration: 1.4,
-					stagger: 0.1,
-					ease: 'back.out(2)'
-				}, 0.8);
-				
-				master.to('.header-ctas .btn', {
-					opacity: 1,
-					scale: 1,
-					rotation: 0,
-					duration: 1.5,
-					ease: 'elastic.out(1, 0.8)'
-				}, 1.1);
-
-				// ═══════════════════════════════════════════════════════
-				// HERO SECTION - EXPLOSIVE REVEAL
-				// ═══════════════════════════════════════════════════════
-				
-				master.to('.hero-video', {
-					opacity: 1,
-					scale: 1,
-					filter: 'blur(0px)',
-					duration: 2.5,
-					ease: 'power3.out'
-				}, 1.0);
-				
-				master.to('.hero-overlay', { 
-					opacity: 1, 
-					duration: 1.8 
-				}, 1.3);
-				
-				// Blobs with dramatic entrance
-				master.to('.blob', {
-					opacity: 0.9,
-					scale: 1,
-					filter: 'blur(0px)',
-					duration: 2.2,
-					stagger: 0.15,
-					ease: 'elastic.out(1, 0.6)'
-				}, 1.6);
-				
-				master.to('.eyebrow', {
-					opacity: 1,
-					y: 0,
-					scale: 1,
-					filter: 'blur(0px)',
-					duration: 1.3,
-					ease: 'back.out(1.8)'
-				}, 2.0);
-				
-				master.to('.hero-title', {
-					opacity: 1,
-					y: 0,
-					scale: 1,
-					rotationX: 0,
-					filter: 'blur(0px)',
-					duration: 2.0,
-					ease: 'power3.out'
-				}, 2.2);
-				
-				master.to('.hero-sub', {
-					opacity: 1,
-					y: 0,
-					rotationX: 0,
-					filter: 'blur(0px)',
-					duration: 1.5,
-					ease: 'back.out(1.7)'
-				}, 2.6);
-				
-				master.to('.hero-actions .btn', {
-					opacity: 1,
-					scale: 1,
-					rotation: 0,
-					y: 0,
-					duration: 1.6,
-					stagger: 0.15,
-					ease: 'elastic.out(1, 0.9)'
-				}, 2.9);
-
-				// ═══════════════════════════════════════════════════════
-				// CONTINUOUS ANIMATIONS - RICH DARK MOTION
-				// ═══════════════════════════════════════════════════════
-				
-				master.add(() => {
-					// Cinematic video zoom
-					gsap.to('.hero-video', {
-						scale: 1.2,
-						duration: 50,
-						repeat: -1,
-						yoyo: true,
-						ease: 'sine.inOut'
-					});
-					
-					// Organic blob morphing
-					gsap.to('.blob-1', {
-						x: -40,
-						y: 30,
-						scale: 1.3,
-						rotation: 60,
-						duration: 10,
-						repeat: -1,
-						yoyo: true,
-						ease: 'sine.inOut'
-					});
-					
-					gsap.to('.blob-2', {
-						x: 35,
-						y: -35,
-						scale: 0.85,
-						rotation: -80,
-						duration: 12,
-						repeat: -1,
-						yoyo: true,
-						ease: 'sine.inOut'
-					});
-					
-					gsap.to('.blob-3', {
-						x: -20,
-						y: 40,
-						scale: 1.25,
-						rotation: 100,
-						duration: 11,
-						repeat: -1,
-						yoyo: true,
-						ease: 'sine.inOut'
-					});
-					
-					// Gradient movements
-					gsap.to('.hero-gradient-1', {
-						x: -60,
-						y: 60,
-						scale: 1.4,
-						duration: 18,
-						repeat: -1,
-						yoyo: true,
-						ease: 'sine.inOut'
-					});
-					
-					gsap.to('.hero-gradient-2', {
-						x: 60,
-						y: -60,
-						scale: 1.5,
-						duration: 22,
-						repeat: -1,
-						yoyo: true,
-						ease: 'sine.inOut'
-					});
-				}, 3.5);
-
-				// ═══════════════════════════════════════════════════════
-				// SCROLL-TRIGGERED ANIMATIONS - PRO DARK STYLE
-				// ═══════════════════════════════════════════════════════
-				
-				if (window.ScrollTrigger) {
-					
-					// FEATURES SECTION - Cinematic card reveals
-					ScrollTrigger.create({
-						trigger: '.features-section',
-						start: 'top 70%',
-						onEnter: () => {
-							// Cards explosive entrance
-							gsap.to('.feature-card', {
-								opacity: 1,
-								y: 0,
-								scale: 1,
-								rotationY: 0,
-								filter: 'blur(0px)',
-								duration: 1.8,
-								stagger: 0.25,
-								ease: 'power4.out'
-							});
-
-							// Icons dramatic spin-in
-							gsap.to('.feature-icon', {
-								opacity: 1,
-								scale: 1,
-								rotation: 0,
-								duration: 2.0,
-								stagger: 0.25,
-								ease: 'elastic.out(1, 0.7)',
-								delay: 0.3
-							});
-
-							// Continuous cinematic icon animations
-							gsap.to('.icon-eye', {
-								rotationY: 360,
-								duration: 25,
-								repeat: -1,
-								ease: 'none'
-							});
-
-							gsap.to('.icon-eye ellipse', {
-								scale: 1.15,
-								duration: 2.5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'power2.inOut',
-								transformOrigin: 'center'
-							});
-
-							gsap.to('.icon-document', {
-								y: -20,
-								rotation: 8,
-								duration: 4,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut'
-							});
-
-							gsap.to('.icon-document line', {
-								x: 8,
-								duration: 2,
-								stagger: 0.3,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut'
-							});
-
-							gsap.to('.icon-dollar', {
-								scale: 1.1,
-								rotation: 5,
-								duration: 3.5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut'
-							});
-
-							gsap.to('.icon-dollar text', {
-								y: -5,
-								duration: 1.5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut'
-							});
-
-							// Card continuous hover effect
-							gsap.to('.feature-card', {
-								y: -10,
-								duration: 3,
-								stagger: 0.3,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2
-							});
-						}
-					});
-
-					// STATS SECTION - Explosive number reveals
-					ScrollTrigger.create({
-						trigger: '.stats-section',
-						start: 'top 70%',
-						onEnter: () => {
-							// Animated counters with cinematic effect
-							const leftNumber = document.querySelector('.stat-left .stat-number');
-							gsap.to('.stat-left .stat-number', {
-								opacity: 1,
-								y: 0,
-								scale: 1,
-								duration: 2.0,
-								ease: 'elastic.out(1, 0.5)',
-								onStart: () => {
-									let count = 0;
-									const target = 10;
-									const duration = 1500;
-									const increment = target / (duration / 16);
-									
-									const counter = setInterval(() => {
-										count += increment;
-										if (count >= target) {
-											count = target;
-											clearInterval(counter);
-										}
-										leftNumber.textContent = '+' + Math.floor(count);
-									}, 16);
-								}
-							});
-
-							const rightNumber = document.querySelector('.stat-right .stat-number');
-							gsap.to('.stat-right .stat-number', {
-								opacity: 1,
-								y: 0,
-								scale: 1,
-								duration: 2.1,
-								ease: 'elastic.out(1, 0.8)',
-								delay: 0.3,
-								onStart: () => {
-									let count = 0;
-									const target = 942949;
-									const duration = 2800;
-									const increment = target / (duration / 16);
-									
-									const counter = setInterval(() => {
-										count += increment;
-										if (count >= target) {
-											count = target;
-											clearInterval(counter);
-										}
-										rightNumber.textContent = '+' + Math.floor(count).toLocaleString() + '$';
-									}, 16);
-								}
-							});
-
-							// Continuous dramatic number pulse
-							gsap.to('.stat-number', {
-								scale: 1.12,
-								textShadow: '0 0 40px rgba(255, 0, 128, 1), 0 0 80px rgba(255, 102, 178, 0.6)',
-								duration: 3,
-								repeat: -1,
-								yoyo: true,
-								ease: 'power2.inOut',
-								delay: 2.5
-							});
-
-							// Phone explosive entrance
-							gsap.to('.phone-mockup', {
-								opacity: 1,
-								y: 0,
-								rotationY: 0,
-								scale: 1,
-								duration: 2.8,
-								ease: 'elastic.out(1, 0.7)',
-								delay: 0.5
-							});
-
-							// Phone continuous dramatic float
-							gsap.to('.phone-frame', {
-								y: -30,
-								rotationZ: 4,
-								scale: 1.05,
-								duration: 5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2
-							});
-
-							// Phone screen glow
-							gsap.to('.phone-screen', {
-								boxShadow: 'inset 0 0 50px rgba(255, 0, 128, 0.1)',
-								duration: 3,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2.5
-							});
-
-							// Animate graph line with glow
-							const graphLine = document.querySelector('.phone-graph polyline');
-							if (graphLine) {
-								const length = graphLine.getTotalLength();
-								graphLine.style.strokeDasharray = length;
-								graphLine.style.strokeDashoffset = length;
-								
-								gsap.to(graphLine, {
-									strokeDashoffset: 0,
-									duration: 2.5,
-									ease: 'power2.inOut',
-									delay: 1.8
-								});
-
-								// Continuous line glow
-								gsap.to(graphLine, {
-									stroke: 'rgba(255, 127, 232, 0.8)',
-									strokeWidth: 3,
-									duration: 2,
-									repeat: -1,
-									yoyo: true,
-									ease: 'sine.inOut',
-									delay: 4
-								});
-							}
-
-							// Total amount pulse
-							gsap.to('.total-amount', {
-								scale: 1.08,
-								textShadow: '0 0 20px rgba(255, 0, 128, 0.8)',
-								duration: 1.5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 3
-							});
-						}
-					});
-
-					// SPLIT SECTION - Cinematic text & image reveal
-					ScrollTrigger.create({
-						trigger: '.split-section',
-						start: 'top 65%',
-						onEnter: () => {
-							// Content explosive entrance
-							gsap.to('.split-content', {
-								opacity: 1,
-								x: 0,
-								filter: 'blur(0px)',
-								duration: 2.0,
-								ease: 'power4.out'
-							});
-
-							// Image dramatic reveal with 3D rotation
-							gsap.to('.split-image', {
-								opacity: 1,
-								scale: 1,
-								rotation: 0,
-								filter: 'blur(0px)',
-								duration: 2.5,
-								ease: 'elastic.out(1, 0.6)',
-								delay: 0.3
-							});
-
-							// Continuous image 3D float
-							gsap.to('.split-img', {
-								y: -35,
-								rotationZ: 3,
-								scale: 1.08,
-								duration: 5.5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2.5
-							});
-
-							// Image glow pulse
-							gsap.to('.image-glow', {
-								opacity: 0.8,
-								scale: 1.2,
-								duration: 3.5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'power2.inOut',
-								delay: 2.5
-							});
-
-							// Continuous overlay shimmer
-							gsap.to('.image-overlay', {
-								opacity: 0.4,
-								duration: 3,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2
-							});
-						}
-					});
-
-					// Parallax effect on split image with rotation
-					ScrollTrigger.create({
-						trigger: '.split-section',
-						start: 'top bottom',
-						end: 'bottom top',
-						scrub: 1,
-						onUpdate: (self) => {
-							const progress = self.progress;
-							gsap.to('.split-img', {
-								y: progress * -80,
-								rotationZ: progress * 2,
-								scale: 1 + (progress * 0.05),
-								ease: 'none'
-							});
-
-							// Parallax glow
-							gsap.to('.image-glow', {
-								y: progress * 40,
-								ease: 'none'
-							});
-						}
-					});
-
-					// 12. PARTICLES - Scroll-based movement
-					if (window.ScrollTrigger) {
-						ScrollTrigger.create({
-							trigger: 'body',
-							start: 'top top',
-							end: 'bottom bottom',
-							scrub: 1,
-							onUpdate: (self) => {
-								const progress = self.progress;
-								
-								gsap.to('.particle-1', { y: progress * -200, x: progress * 50, rotation: progress * 180, ease: 'none' });
-								gsap.to('.particle-2', { y: progress * -150, x: progress * -80, rotation: progress * -200, ease: 'none' });
-								gsap.to('.particle-3', { y: progress * -300, x: progress * 100, rotation: progress * 220, ease: 'none' });
-								gsap.to('.particle-4', { y: progress * -250, x: progress * -60, rotation: progress * -180, ease: 'none' });
-								gsap.to('.particle-5', { y: progress * -180, x: progress * 70, rotation: progress * 240, ease: 'none' });
-								gsap.to('.particle-6', { y: progress * -220, x: progress * -90, rotation: progress * -220, ease: 'none' });
-								gsap.to('.particle-7', { y: progress * -280, x: progress * 120, rotation: progress * 200, ease: 'none' });
-								gsap.to('.particle-8', { y: progress * -200, x: progress * -100, rotation: progress * -240, ease: 'none' });
-							}
-						});
-
-						// 13. HEADER - Scroll shrink effect
-						ScrollTrigger.create({
-							trigger: 'body',
-							start: 'top top',
-							end: '200px',
-							scrub: 1,
-							onUpdate: (self) => {
-								const progress = self.progress;
-								gsap.to('.site-header', {
-									paddingTop: 20 - (progress * 8),
-									paddingBottom: 20 - (progress * 8),
-									ease: 'none'
-								});
-								gsap.to('.logo-img', {
-									scale: 1 - (progress * 0.15),
-									ease: 'none'
-								});
-							}
-						});
-					}
-				}
-
-				// ═══════════════════════════════════════════════════════
-				// PRO-LEVEL INTERACTIVE EFFECTS
-				// ═══════════════════════════════════════════════════════
-				
-				// Nav links - Dramatic hover
-				document.querySelectorAll('.nav-list a').forEach(link => {
-					link.addEventListener('mouseenter', () => {
-						gsap.to(link, {
-							y: -8,
-							scale: 1.1,
-							textShadow: '0 0 20px rgba(255, 0, 128, 0.8)',
-							duration: 0.4,
-							ease: 'back.out(2)'
-						});
-					});
-					link.addEventListener('mouseleave', () => {
-						gsap.to(link, {
-							y: 0,
-							scale: 1,
-							textShadow: '0 0 0px rgba(255, 0, 128, 0)',
-							duration: 0.4
-						});
-					});
-				});
-
-				// Buttons - Ultra magnetic + ripple
-				document.querySelectorAll('.btn').forEach(btn => {
-					btn.addEventListener('mousemove', (e) => {
-						const rect = btn.getBoundingClientRect();
-						const x = e.clientX - rect.left - rect.width / 2;
-						const y = e.clientY - rect.top - rect.height / 2;
-						
-						gsap.to(btn, {
-							x: x * 0.4,
-							y: y * 0.4,
-							scale: 1.05,
-							duration: 0.3,
-							ease: 'power2.out'
-						});
-					});
-
-					btn.addEventListener('mouseleave', () => {
-						gsap.to(btn, {
-							x: 0,
-							y: 0,
-							scale: 1,
-							duration: 0.6,
-							ease: 'elastic.out(1, 0.6)'
-						});
-					});
-
-					btn.addEventListener('click', function(e) {
-						const ripple = document.createElement('span');
-						const rect = this.getBoundingClientRect();
-						const size = Math.max(rect.width, rect.height);
-						const x = e.clientX - rect.left - size / 2;
-						const y = e.clientY - rect.top - size / 2;
-						
-						ripple.style.width = ripple.style.height = size + 'px';
-						ripple.style.left = x + 'px';
-						ripple.style.top = y + 'px';
-						ripple.classList.add('ripple');
-						
-						this.appendChild(ripple);
-						setTimeout(() => ripple.remove(), 600);
-					});
-				});
-
-				// Feature cards - 3D tilt on hover
-				document.querySelectorAll('.feature-card').forEach(card => {
-					card.addEventListener('mousemove', (e) => {
-						const rect = card.getBoundingClientRect();
-						const x = e.clientX - rect.left;
-						const y = e.clientY - rect.top;
-						const centerX = rect.width / 2;
-						const centerY = rect.height / 2;
-						const rotateX = (y - centerY) / 12;
-						const rotateY = (centerX - x) / 12;
-
-						gsap.to(card, {
-							rotationX: rotateX,
-							rotationY: rotateY,
-							scale: 1.05,
-							duration: 0.3,
-							ease: 'power2.out',
-							transformPerspective: 1000
-						});
-					});
-
-					card.addEventListener('mouseleave', () => {
-						gsap.to(card, {
-							rotationX: 0,
-							rotationY: 0,
-							scale: 1,
-							duration: 0.7,
-							ease: 'elastic.out(1, 0.5)'
-						});
-					});
-				});
-
-				// Mouse parallax for blobs and gradients
-				let mouseX = 0, mouseY = 0;
-				let currentX = 0, currentY = 0;
-
-				document.addEventListener('mousemove', (e) => {
-					mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-					mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-				});
-
-				function animateParallax() {
-					currentX += (mouseX - currentX) * 0.1;
-					currentY += (mouseY - currentY) * 0.1;
-
-					gsap.to('.blob-1', { x: currentX * 70, y: currentY * 70, duration: 0.3, ease: 'none' });
-					gsap.to('.blob-2', { x: currentX * -50, y: currentY * -50, duration: 0.3, ease: 'none' });
-					gsap.to('.blob-3', { x: currentX * 60, y: currentY * -60, duration: 0.3, ease: 'none' });
-					gsap.to('.hero-gradient-1', { x: currentX * 40, y: currentY * 40, duration: 0.3, ease: 'none' });
-					gsap.to('.hero-gradient-2', { x: currentX * -55, y: currentY * 55, duration: 0.3, ease: 'none' });
-					gsap.to('.particle', { x: currentX * 25, y: currentY * 25, duration: 0.3, ease: 'none' });
-
-					requestAnimationFrame(animateParallax);
-				}
-
-				animateParallax();
-
-				window.__masterTimeline = master;
-				console.log('[ANIM] ✨ Pro cinematic animations complete');
-
-				return master;
-
-			} catch (err) {
-				console.error('[ANIM] Init error:', err);
-				revealFallback();
-				return null;
-			}
-		}
-
-
-
-		function killAnimations() {
-			if (window.__masterTimeline) {
-				window.__masterTimeline.kill();
-				window.__masterTimeline = null;
-			}
-			if (window.ScrollTrigger) {
-				ScrollTrigger.getAll().forEach(st => st.kill());
-			}
-			gsap.killTweensOf('*');
-			restorePlainTitle();
-			console.log('[ANIM] All animations killed');
-		}
-
-		// Animation toggle
-		if (animToggle) {
-			animToggle.addEventListener('click', () => {
-				animationsEnabled = !animationsEnabled;
-				updateAnimToggleUI();
-				if (animationsEnabled) {
-					location.reload(); // Reload to restart animations
-				} else {
-					killAnimations();
-					revealFallback();
-				}
-			});
-		}
-
-		// INITIALIZE
-		updateAnimToggleUI();
-		if (animationsEnabled) {
-			if (document.readyState === 'loading') {
-				document.addEventListener('DOMContentLoaded', initAnimations);
-			} else {
-				initAnimations();
-			}
-		} else {
-			revealFallback();
-		}
+		// GSAP animations for header elements
+		gsap.from(".container", {
+			duration: 1.5,
+			y: -100,
+			opacity: 0,
+			ease: "power2.out"
+		});
+
+		gsap.from(".logo", {
+			duration: 1,
+			x: -50,
+			opacity: 0,
+			ease: "power2.out",
+			delay: 0.5
+		});
+
+		gsap.from(".logo img", {
+			duration: 2,
+			rotation: 360,
+			ease: "power2.out",
+			delay: 1
+		});
+
+		gsap.from(".logo span", {
+			duration: 1,
+			y: 30,
+			opacity: 0,
+			ease: "power2.out",
+			delay: 1.2
+		});
+
+		gsap.from("nav ul li", {
+			duration: 0.8,
+			y: 20,
+			opacity: 0,
+			ease: "power2.out",
+			stagger: 0.1,
+			delay: 1.5
+		});
+
+		gsap.from(".button", {
+			duration: 1,
+			scale: 0.8,
+			opacity: 0,
+			ease: "back.out(1.7)",
+			delay: 2
+		});
+
+		// Continuous subtle animations
+		gsap.to(".logo", {
+			duration: 3,
+			y: -5,
+			yoyo: true,
+			repeat: -1,
+			ease: "power2.inOut",
+			delay: 2.5
+		});
+
+		gsap.to("nav ul li a", {
+			duration: 2,
+			scale: 1.05,
+			yoyo: true,
+			repeat: -1,
+			ease: "power2.inOut",
+			stagger: 0.2,
+			delay: 3
+		});
 	</script>
 </body>
+
 </html>
