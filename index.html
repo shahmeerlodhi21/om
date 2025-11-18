@@ -35,6 +35,18 @@
 		</div>
 	</header>
 
+	<!-- Animated particles background -->
+	<div class="particles-container" aria-hidden="true">
+		<div class="particle particle-1"></div>
+		<div class="particle particle-2"></div>
+		<div class="particle particle-3"></div>
+		<div class="particle particle-4"></div>
+		<div class="particle particle-5"></div>
+		<div class="particle particle-6"></div>
+		<div class="particle particle-7"></div>
+		<div class="particle particle-8"></div>
+	</div>
+
 	<main>
 		<section class="hero">
 			<div class="hero-media" aria-hidden="true">
@@ -43,6 +55,8 @@
 					Your browser does not support the video tag.
 				</video>
 				<div class="hero-overlay" aria-hidden="true"></div>
+				<div class="hero-gradient-1"></div>
+				<div class="hero-gradient-2"></div>
 			</div>
 
 			<!-- Decorative animated blobs (visual depth) -->
@@ -271,7 +285,7 @@
 		}, 2000);
 
 		function initAnimations() {
-			console.log('[ANIM] Init start', {gsap: !!window.gsap, ScrollTrigger: !!window.ScrollTrigger});
+			console.log('[ANIM] 🎬 PRO DARK CINEMATIC ANIMATIONS');
 			
 			if (!window.gsap) {
 				console.error('[ANIM] GSAP not loaded!');
@@ -281,172 +295,296 @@
 
 			try {
 				if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+				// ═══════════════════════════════════════════════════════
+				// INITIAL STATES - CINEMATIC DARK ENTRANCE
+				// ═══════════════════════════════════════════════════════
 				
-				splitTitleIntoChars();
+				gsap.set('body', { backgroundColor: '#000000' });
+				gsap.set('.site-header', { autoAlpha: 0, y: -60 });
+				gsap.set('.logo-img', { opacity: 0, scale: 0, rotation: -180, filter: 'brightness(0) blur(10px)' });
+				gsap.set('.nav-list a', { opacity: 0, y: -50, rotationX: -90, scale: 0.8 });
+				gsap.set('.header-ctas .btn', { opacity: 0, scale: 0, rotation: 180 });
+				gsap.set('.hero-overlay', { opacity: 0 });
+				gsap.set('.hero-video', { opacity: 0, scale: 1.3, filter: 'blur(30px)' });
+				gsap.set('.blob', { opacity: 0, scale: 0.3, filter: 'blur(40px)' });
+				gsap.set('.eyebrow', { opacity: 0, y: 50, scale: 0.7, filter: 'blur(8px)' });
+				gsap.set('.hero-title', { opacity: 0, y: 100, scale: 0.7, rotationX: 45, filter: 'blur(15px)' });
+				gsap.set('.hero-sub', { opacity: 0, y: 80, rotationX: -30, filter: 'blur(10px)' });
+				gsap.set('.hero-actions .btn', { opacity: 0, scale: 0, rotation: -90, y: 50 });
+				gsap.set('.card', { opacity: 0, y: 150, scale: 0.5, rotationY: 60 });
+				gsap.set('.section h2', { opacity: 0, y: 80, scale: 0.8, filter: 'blur(10px)' });
+				gsap.set('.footer-inner', { opacity: 0, y: 60 });
+				
+				// Feature cards
+				gsap.set('.feature-card', { opacity: 0, y: 120, scale: 0.6, rotationY: 45, filter: 'blur(12px)' });
+				gsap.set('.feature-icon', { opacity: 0, scale: 0, rotation: -180 });
+				
+				// Stats section
+				gsap.set('.stats-content', { opacity: 0, x: -150, rotationY: 45 });
+				gsap.set('.phone-frame', { opacity: 0, y: 200, scale: 0.4, rotation: -30 });
+				
+				// Split section
+				gsap.set('.split-content', { opacity: 0, x: -150, filter: 'blur(15px)' });
+				gsap.set('.split-image', { opacity: 0, scale: 0.5, rotation: 30, filter: 'blur(20px)' });
 
-				// SET ALL INITIAL STATES - EVERYTHING HIDDEN
-				gsap.set('.site-header', {autoAlpha: 1}); // header visible but children hidden
-				gsap.set('.logo-img', {opacity: 0, x: -40, scale: 0.95});
-				gsap.set('.nav-list a', {opacity: 0, y: -20});
-				gsap.set('.header-ctas .btn', {opacity: 0, y: -15});
-				gsap.set('.hero-overlay', {opacity: 0});
-				gsap.set('.hero-video', {opacity: 0, scale: 1.08});
-				gsap.set('.blob', {opacity: 0, scale: 0.8});
-				gsap.set('.eyebrow', {opacity: 0, y: 30});
-				gsap.set('.char', {opacity: 0, y: 60, rotationX: 25});
-				gsap.set('.hero-sub', {opacity: 0, y: 30});
-				gsap.set('.hero-actions .btn', {opacity: 0, y: 20, scale: 0.9});
-				gsap.set('.card', {opacity: 0, y: 50, rotationY: 8});
-				gsap.set('.section h2', {opacity: 0, y: 30});
-				gsap.set('.footer-inner', {opacity: 0, y: 20});
-
-				// Remove is-loading class NOW that GSAP has set initial states
 				document.documentElement.classList.remove('is-loading');
-				console.log('[ANIM] Initial states set, is-loading removed');
+				console.log('[ANIM] 🎭 Dark cinematic states set');
 
-				// CREATE MASTER TIMELINE - EVERYTHING SEQUENCES IN ORDER
+				// ═══════════════════════════════════════════════════════
+				// MASTER CINEMATIC TIMELINE
+				// ═══════════════════════════════════════════════════════
+				
 				const master = gsap.timeline({
-					defaults: {ease: 'power3.out'},
-					onStart: () => console.log('[ANIM] Master timeline started'),
-					onComplete: () => console.log('[ANIM] Master timeline complete')
+					defaults: { ease: 'power4.out' },
+					onStart: () => console.log('[ANIM] 🎬 Cinematic sequence START'),
+					onComplete: () => console.log('[ANIM] ✨ Cinematic sequence COMPLETE')
 				});
 
-				// 1. HEADER ANIMATIONS (logo -> nav links -> buttons)
-				master.to('.logo-img', {opacity: 1, x: 0, scale: 1, duration: 1.0, ease: 'back.out(1.4)'}, 0.2);
-				master.to('.nav-list a', {opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'back.out(1.2)'}, 0.5);
-				master.to('.header-ctas .btn', {opacity: 1, y: 0, duration: 0.8, stagger: 0.08}, 0.8);
+				// Background fade from black to purple
+				master.to('body', { 
+					backgroundColor: '#231B3B', 
+					duration: 2, 
+					ease: 'power2.inOut' 
+				}, 0);
 
-				// 2. HERO VIDEO & OVERLAY
-				master.to('.hero-video', {opacity: 1, scale: 1, duration: 1.8, ease: 'power2.out'}, 1.0);
-				master.to('.hero-overlay', {opacity: 1, duration: 1.2}, 1.2);
-
-				// 3. DECORATIVE BLOBS (animate in with organic motion)
-				master.to('.blob-1', {opacity: 0.85, scale: 1, duration: 2.0, ease: 'elastic.out(1, 0.5)'}, 1.5);
-				master.to('.blob-2', {opacity: 0.85, scale: 1, duration: 2.2, ease: 'elastic.out(1, 0.5)'}, 1.6);
-				master.to('.blob-3', {opacity: 0.85, scale: 1, duration: 2.0, ease: 'elastic.out(1, 0.5)'}, 1.7);
-
-				// 4. HERO TEXT CONTENT (eyebrow -> title chars -> subtitle -> CTA)
-				master.to('.eyebrow', {opacity: 1, y: 0, duration: 0.8}, 2.0);
-				master.to('.char', {
-					opacity: 1, 
+				// ═══════════════════════════════════════════════════════
+				// HEADER - EPIC ENTRANCE
+				// ═══════════════════════════════════════════════════════
+				
+				master.to('.site-header', { 
+					autoAlpha: 1, 
 					y: 0, 
-					rotationX: 0, 
-					duration: 0.8,
-					stagger: {each: 0.04, from: 'start'},
-					ease: 'back.out(1.5)'
-				}, 2.3);
-				master.to('.hero-sub', {opacity: 1, y: 0, duration: 1.0}, 3.5);
-				master.to('.hero-actions .btn', {opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'back.out(1.3)'}, 4.0);
+					duration: 1.2,
+					ease: 'power3.out'
+				}, 0.3);
+				
+				master.to('.logo-img', {
+					opacity: 1,
+					scale: 1,
+					rotation: 0,
+					filter: 'brightness(1) blur(0px)',
+					duration: 1.8,
+					ease: 'elastic.out(1, 0.7)'
+				}, 0.5);
+				
+				master.to('.nav-list a', {
+					opacity: 1,
+					y: 0,
+					rotationX: 0,
+					scale: 1,
+					duration: 1.4,
+					stagger: 0.1,
+					ease: 'back.out(2)'
+				}, 0.8);
+				
+				master.to('.header-ctas .btn', {
+					opacity: 1,
+					scale: 1,
+					rotation: 0,
+					duration: 1.5,
+					ease: 'elastic.out(1, 0.8)'
+				}, 1.1);
 
-				// 5. CONTINUOUS BLOB ANIMATIONS (organic floating)
+				// ═══════════════════════════════════════════════════════
+				// HERO SECTION - EXPLOSIVE REVEAL
+				// ═══════════════════════════════════════════════════════
+				
+				master.to('.hero-video', {
+					opacity: 1,
+					scale: 1,
+					filter: 'blur(0px)',
+					duration: 2.5,
+					ease: 'power3.out'
+				}, 1.0);
+				
+				master.to('.hero-overlay', { 
+					opacity: 1, 
+					duration: 1.8 
+				}, 1.3);
+				
+				// Blobs with dramatic entrance
+				master.to('.blob', {
+					opacity: 0.9,
+					scale: 1,
+					filter: 'blur(0px)',
+					duration: 2.2,
+					stagger: 0.15,
+					ease: 'elastic.out(1, 0.6)'
+				}, 1.6);
+				
+				master.to('.eyebrow', {
+					opacity: 1,
+					y: 0,
+					scale: 1,
+					filter: 'blur(0px)',
+					duration: 1.3,
+					ease: 'back.out(1.8)'
+				}, 2.0);
+				
+				master.to('.hero-title', {
+					opacity: 1,
+					y: 0,
+					scale: 1,
+					rotationX: 0,
+					filter: 'blur(0px)',
+					duration: 2.0,
+					ease: 'power3.out'
+				}, 2.2);
+				
+				master.to('.hero-sub', {
+					opacity: 1,
+					y: 0,
+					rotationX: 0,
+					filter: 'blur(0px)',
+					duration: 1.5,
+					ease: 'back.out(1.7)'
+				}, 2.6);
+				
+				master.to('.hero-actions .btn', {
+					opacity: 1,
+					scale: 1,
+					rotation: 0,
+					y: 0,
+					duration: 1.6,
+					stagger: 0.15,
+					ease: 'elastic.out(1, 0.9)'
+				}, 2.9);
+
+				// ═══════════════════════════════════════════════════════
+				// CONTINUOUS ANIMATIONS - RICH DARK MOTION
+				// ═══════════════════════════════════════════════════════
+				
 				master.add(() => {
-					gsap.to('.blob-1', {x: -20, y: 10, scale: 1.1, duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut'});
-					gsap.to('.blob-2', {x: 15, y: -15, scale: 0.95, duration: 10, repeat: -1, yoyo: true, ease: 'sine.inOut'});
-					gsap.to('.blob-3', {x: -10, y: 20, scale: 1.08, duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut'});
-				}, 3.0);
+					// Cinematic video zoom
+					gsap.to('.hero-video', {
+						scale: 1.2,
+						duration: 50,
+						repeat: -1,
+						yoyo: true,
+						ease: 'sine.inOut'
+					});
+					
+					// Organic blob morphing
+					gsap.to('.blob-1', {
+						x: -40,
+						y: 30,
+						scale: 1.3,
+						rotation: 60,
+						duration: 10,
+						repeat: -1,
+						yoyo: true,
+						ease: 'sine.inOut'
+					});
+					
+					gsap.to('.blob-2', {
+						x: 35,
+						y: -35,
+						scale: 0.85,
+						rotation: -80,
+						duration: 12,
+						repeat: -1,
+						yoyo: true,
+						ease: 'sine.inOut'
+					});
+					
+					gsap.to('.blob-3', {
+						x: -20,
+						y: 40,
+						scale: 1.25,
+						rotation: 100,
+						duration: 11,
+						repeat: -1,
+						yoyo: true,
+						ease: 'sine.inOut'
+					});
+					
+					// Gradient movements
+					gsap.to('.hero-gradient-1', {
+						x: -60,
+						y: 60,
+						scale: 1.4,
+						duration: 18,
+						repeat: -1,
+						yoyo: true,
+						ease: 'sine.inOut'
+					});
+					
+					gsap.to('.hero-gradient-2', {
+						x: 60,
+						y: -60,
+						scale: 1.5,
+						duration: 22,
+						repeat: -1,
+						yoyo: true,
+						ease: 'sine.inOut'
+					});
+				}, 3.5);
 
-				// 6. VIDEO SLOW ZOOM (continuous)
-				master.add(() => {
-					gsap.to('.hero-video', {scale: 1.15, duration: 40, repeat: -1, yoyo: true, ease: 'sine.inOut'});
-				}, 2.5);
-
-				// 7. CARDS (scroll-triggered)
+				// ═══════════════════════════════════════════════════════
+				// SCROLL-TRIGGERED ANIMATIONS - PRO DARK STYLE
+				// ═══════════════════════════════════════════════════════
+				
 				if (window.ScrollTrigger) {
-					ScrollTrigger.create({
-						trigger: '.grid',
-						start: 'top 85%',
-						onEnter: () => {
-							gsap.to('.card', {
-								opacity: 1,
-								y: 0,
-								rotationY: 0,
-								duration: 1.0,
-								stagger: 0.15,
-								ease: 'back.out(1.2)'
-							});
-						}
-					});
-
-					// 8. SECTION HEADINGS & FOOTER
-					ScrollTrigger.create({
-						trigger: '.section',
-						start: 'top 90%',
-						onEnter: () => {
-							gsap.to('.section h2', {opacity: 1, y: 0, duration: 0.9, stagger: 0.1});
-						}
-					});
-
-					ScrollTrigger.create({
-						trigger: '.site-footer',
-						start: 'top 95%',
-						onEnter: () => {
-							gsap.to('.footer-inner', {opacity: 1, y: 0, duration: 0.8});
-						}
-					});
-
-					// 9. FEATURES SECTION - Vision, Process, Mission
-					gsap.set('.feature-card', {opacity: 0, y: 80, rotationY: -15, scale: 0.9});
-					gsap.set('.feature-icon svg', {opacity: 0, scale: 0.5, rotation: -45});
-					gsap.set('.feature-title', {opacity: 0, y: 20});
-					gsap.set('.feature-text', {opacity: 0, y: 15});
-
+					
+					// FEATURES SECTION - Cinematic card reveals
 					ScrollTrigger.create({
 						trigger: '.features-section',
-						start: 'top 75%',
+						start: 'top 70%',
 						onEnter: () => {
-							// Animate cards in
+							// Cards explosive entrance
 							gsap.to('.feature-card', {
 								opacity: 1,
 								y: 0,
-								rotationY: 0,
 								scale: 1,
-								duration: 1.2,
-								stagger: 0.2,
-								ease: 'back.out(1.4)'
+								rotationY: 0,
+								filter: 'blur(0px)',
+								duration: 1.8,
+								stagger: 0.25,
+								ease: 'power4.out'
 							});
 
-							// Animate icons
-							gsap.to('.feature-icon svg', {
+							// Icons dramatic spin-in
+							gsap.to('.feature-icon', {
 								opacity: 1,
 								scale: 1,
 								rotation: 0,
-								duration: 1.5,
-								stagger: 0.2,
-								ease: 'elastic.out(1, 0.6)',
+								duration: 2.0,
+								stagger: 0.25,
+								ease: 'elastic.out(1, 0.7)',
 								delay: 0.3
 							});
 
-							// Animate titles
-							gsap.to('.feature-title', {
-								opacity: 1,
-								y: 0,
-								duration: 0.8,
-								stagger: 0.2,
-								ease: 'power3.out',
-								delay: 0.5
-							});
-
-							// Animate text
-							gsap.to('.feature-text', {
-								opacity: 1,
-								y: 0,
-								duration: 0.8,
-								stagger: 0.2,
-								ease: 'power3.out',
-								delay: 0.7
-							});
-
-							// Continuous icon animations
+							// Continuous cinematic icon animations
 							gsap.to('.icon-eye', {
 								rotationY: 360,
-								duration: 20,
+								duration: 25,
 								repeat: -1,
 								ease: 'none'
 							});
 
+							gsap.to('.icon-eye ellipse', {
+								scale: 1.15,
+								duration: 2.5,
+								repeat: -1,
+								yoyo: true,
+								ease: 'power2.inOut',
+								transformOrigin: 'center'
+							});
+
 							gsap.to('.icon-document', {
-								y: -10,
-								duration: 3,
+								y: -20,
+								rotation: 8,
+								duration: 4,
+								repeat: -1,
+								yoyo: true,
+								ease: 'sine.inOut'
+							});
+
+							gsap.to('.icon-document line', {
+								x: 8,
+								duration: 2,
+								stagger: 0.3,
 								repeat: -1,
 								yoyo: true,
 								ease: 'sine.inOut'
@@ -454,42 +592,46 @@
 
 							gsap.to('.icon-dollar', {
 								scale: 1.1,
-								duration: 2,
+								rotation: 5,
+								duration: 3.5,
 								repeat: -1,
 								yoyo: true,
 								ease: 'sine.inOut'
 							});
+
+							gsap.to('.icon-dollar text', {
+								y: -5,
+								duration: 1.5,
+								repeat: -1,
+								yoyo: true,
+								ease: 'sine.inOut'
+							});
+
+							// Card continuous hover effect
+							gsap.to('.feature-card', {
+								y: -10,
+								duration: 3,
+								stagger: 0.3,
+								repeat: -1,
+								yoyo: true,
+								ease: 'sine.inOut',
+								delay: 2
+							});
 						}
 					});
 
-					// 10. STATS SECTION - Numbers and Phone
-					gsap.set('.stat-item', {opacity: 0, scale: 0.8});
-					gsap.set('.stat-number', {opacity: 0, y: 50, scale: 0.5});
-					gsap.set('.stat-label', {opacity: 0, y: 20});
-					gsap.set('.phone-mockup', {opacity: 0, y: 100, rotationY: -25, scale: 0.85});
-					gsap.set('.phone-header', {opacity: 0, y: 30});
-					gsap.set('.phone-graph', {opacity: 0, scale: 0.8});
-					gsap.set('.stat-row', {opacity: 0, x: -20});
-
+					// STATS SECTION - Explosive number reveals
 					ScrollTrigger.create({
 						trigger: '.stats-section',
 						start: 'top 70%',
 						onEnter: () => {
-							// Animate stat containers
-							gsap.to('.stat-item', {
-								opacity: 1,
-								scale: 1,
-								duration: 1.0,
-								ease: 'back.out(1.3)'
-							});
-
-							// Animate left stat number with counter
+							// Animated counters with cinematic effect
 							const leftNumber = document.querySelector('.stat-left .stat-number');
 							gsap.to('.stat-left .stat-number', {
 								opacity: 1,
 								y: 0,
 								scale: 1,
-								duration: 1.5,
+								duration: 2.0,
 								ease: 'elastic.out(1, 0.5)',
 								onStart: () => {
 									let count = 0;
@@ -508,19 +650,18 @@
 								}
 							});
 
-							// Animate right stat number with counter
 							const rightNumber = document.querySelector('.stat-right .stat-number');
 							gsap.to('.stat-right .stat-number', {
 								opacity: 1,
 								y: 0,
 								scale: 1,
-								duration: 1.5,
-								ease: 'elastic.out(1, 0.5)',
-								delay: 0.2,
+								duration: 2.1,
+								ease: 'elastic.out(1, 0.8)',
+								delay: 0.3,
 								onStart: () => {
 									let count = 0;
 									const target = 942949;
-									const duration = 2000;
+									const duration = 2800;
 									const increment = target / (duration / 16);
 									
 									const counter = setInterval(() => {
@@ -534,76 +675,34 @@
 								}
 							});
 
-							// Animate stat labels with pulse
-							gsap.to('.stat-label', {
-								opacity: 1,
-								y: 0,
-								duration: 0.8,
-								ease: 'power3.out',
-								delay: 0.8
-							});
-
-							// Continuous label glow
-							gsap.to('.stat-label', {
-								textShadow: '0 0 20px rgba(255, 0, 128, 0.6)',
-								duration: 2,
+							// Continuous dramatic number pulse
+							gsap.to('.stat-number', {
+								scale: 1.12,
+								textShadow: '0 0 40px rgba(255, 0, 128, 1), 0 0 80px rgba(255, 102, 178, 0.6)',
+								duration: 3,
 								repeat: -1,
 								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2
+								ease: 'power2.inOut',
+								delay: 2.5
 							});
 
-							// Animate phone mockup with complex motion
+							// Phone explosive entrance
 							gsap.to('.phone-mockup', {
 								opacity: 1,
 								y: 0,
 								rotationY: 0,
 								scale: 1,
-								duration: 2.2,
-								ease: 'elastic.out(1, 0.6)',
-								delay: 0.3
+								duration: 2.8,
+								ease: 'elastic.out(1, 0.7)',
+								delay: 0.5
 							});
 
-							// Animate phone content
-							gsap.to('.phone-header', {
-								opacity: 1,
-								y: 0,
-								duration: 0.8,
-								delay: 1.2
-							});
-
-							// Earnings title pulse
-							gsap.to('.earnings-title', {
-								scale: 1.05,
-								textShadow: '0 0 15px rgba(255, 0, 128, 0.5)',
-								duration: 1.5,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2
-							});
-
-							gsap.to('.phone-graph', {
-								opacity: 1,
-								scale: 1,
-								duration: 1.0,
-								delay: 1.5
-							});
-
-							gsap.to('.stat-row', {
-								opacity: 1,
-								x: 0,
-								duration: 0.6,
-								stagger: 0.1,
-								ease: 'back.out(1.3)',
-								delay: 1.8
-							});
-
-							// Continuous phone float with rotation
+							// Phone continuous dramatic float
 							gsap.to('.phone-frame', {
-								y: -20,
-								rotationZ: 2,
-								duration: 4,
+								y: -30,
+								rotationZ: 4,
+								scale: 1.05,
+								duration: 5,
 								repeat: -1,
 								yoyo: true,
 								ease: 'sine.inOut',
@@ -659,96 +758,55 @@
 						}
 					});
 
-					// 11. SPLIT SECTION - Text and Image
-					gsap.set('.split-heading .word', {opacity: 0, y: 80, rotationX: -45, scale: 0.8});
-					gsap.set('.split-para .line', {opacity: 0, x: -60, rotationY: -25});
-					gsap.set('.split-para-bold .line-bold', {opacity: 0, x: -80, scale: 0.9, rotationY: -20});
-					gsap.set('.split-image', {opacity: 0, x: 100, rotationY: 25, scale: 0.85});
-					gsap.set('.image-glow', {opacity: 0, scale: 0.5});
-
+					// SPLIT SECTION - Cinematic text & image reveal
 					ScrollTrigger.create({
 						trigger: '.split-section',
-						start: 'top 70%',
+						start: 'top 65%',
 						onEnter: () => {
-							// Animate heading words individually
-							gsap.to('.split-heading .word', {
-								opacity: 1,
-								y: 0,
-								rotationX: 0,
-								scale: 1,
-								duration: 1.4,
-								stagger: {
-									each: 0.12,
-									ease: 'power2.out'
-								},
-								ease: 'elastic.out(1, 0.6)'
-							});
-
-							// Continuous word floating
-							gsap.to('.split-heading .word', {
-								y: -5,
-								duration: 2.5,
-								stagger: 0.15,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 1.5
-							});
-
-							// Animate paragraph lines
-							gsap.to('.split-para .line', {
+							// Content explosive entrance
+							gsap.to('.split-content', {
 								opacity: 1,
 								x: 0,
-								rotationY: 0,
-								duration: 1.2,
-								stagger: 0.15,
-								ease: 'back.out(1.4)',
-								delay: 0.4
+								filter: 'blur(0px)',
+								duration: 2.0,
+								ease: 'power4.out'
 							});
 
-							// Animate bold lines
-							gsap.to('.split-para-bold .line-bold', {
-								opacity: 1,
-								x: 0,
-								scale: 1,
-								rotationY: 0,
-								duration: 1.3,
-								stagger: 0.2,
-								ease: 'elastic.out(1, 0.7)',
-								delay: 0.8
-							});
-
-							// Pulse effect on bold text
-							gsap.to('.split-para-bold', {
-								scale: 1.02,
-								duration: 2,
-								repeat: -1,
-								yoyo: true,
-								ease: 'sine.inOut',
-								delay: 2
-							});
-
-							// Animate image with complex motion
+							// Image dramatic reveal with 3D rotation
 							gsap.to('.split-image', {
 								opacity: 1,
-								x: 0,
-								rotationY: 0,
 								scale: 1,
-								duration: 2.0,
-								ease: 'elastic.out(1, 0.5)',
+								rotation: 0,
+								filter: 'blur(0px)',
+								duration: 2.5,
+								ease: 'elastic.out(1, 0.6)',
 								delay: 0.3
 							});
 
-							// Animate image glow
-							gsap.to('.image-glow', {
-								opacity: 0.6,
-								scale: 1,
-								duration: 2.5,
-								ease: 'power2.out',
-								delay: 0.8
+							// Continuous image 3D float
+							gsap.to('.split-img', {
+								y: -35,
+								rotationZ: 3,
+								scale: 1.08,
+								duration: 5.5,
+								repeat: -1,
+								yoyo: true,
+								ease: 'sine.inOut',
+								delay: 2.5
 							});
 
-							// Continuous image overlay pulse
+							// Image glow pulse
+							gsap.to('.image-glow', {
+								opacity: 0.8,
+								scale: 1.2,
+								duration: 3.5,
+								repeat: -1,
+								yoyo: true,
+								ease: 'power2.inOut',
+								delay: 2.5
+							});
+
+							// Continuous overlay shimmer
 							gsap.to('.image-overlay', {
 								opacity: 0.4,
 								duration: 3,
@@ -782,16 +840,178 @@
 							});
 						}
 					});
+
+					// 12. PARTICLES - Scroll-based movement
+					if (window.ScrollTrigger) {
+						ScrollTrigger.create({
+							trigger: 'body',
+							start: 'top top',
+							end: 'bottom bottom',
+							scrub: 1,
+							onUpdate: (self) => {
+								const progress = self.progress;
+								
+								gsap.to('.particle-1', { y: progress * -200, x: progress * 50, rotation: progress * 180, ease: 'none' });
+								gsap.to('.particle-2', { y: progress * -150, x: progress * -80, rotation: progress * -200, ease: 'none' });
+								gsap.to('.particle-3', { y: progress * -300, x: progress * 100, rotation: progress * 220, ease: 'none' });
+								gsap.to('.particle-4', { y: progress * -250, x: progress * -60, rotation: progress * -180, ease: 'none' });
+								gsap.to('.particle-5', { y: progress * -180, x: progress * 70, rotation: progress * 240, ease: 'none' });
+								gsap.to('.particle-6', { y: progress * -220, x: progress * -90, rotation: progress * -220, ease: 'none' });
+								gsap.to('.particle-7', { y: progress * -280, x: progress * 120, rotation: progress * 200, ease: 'none' });
+								gsap.to('.particle-8', { y: progress * -200, x: progress * -100, rotation: progress * -240, ease: 'none' });
+							}
+						});
+
+						// 13. HEADER - Scroll shrink effect
+						ScrollTrigger.create({
+							trigger: 'body',
+							start: 'top top',
+							end: '200px',
+							scrub: 1,
+							onUpdate: (self) => {
+								const progress = self.progress;
+								gsap.to('.site-header', {
+									paddingTop: 20 - (progress * 8),
+									paddingBottom: 20 - (progress * 8),
+									ease: 'none'
+								});
+								gsap.to('.logo-img', {
+									scale: 1 - (progress * 0.15),
+									ease: 'none'
+								});
+							}
+						});
+					}
 				}
 
-				// NAV LINK HOVER EFFECTS
+				// ═══════════════════════════════════════════════════════
+				// PRO-LEVEL INTERACTIVE EFFECTS
+				// ═══════════════════════════════════════════════════════
+				
+				// Nav links - Dramatic hover
 				document.querySelectorAll('.nav-list a').forEach(link => {
-					link.addEventListener('mouseenter', () => gsap.to(link, {y: -4, duration: 0.3, ease: 'power2.out'}));
-					link.addEventListener('mouseleave', () => gsap.to(link, {y: 0, duration: 0.3}));
+					link.addEventListener('mouseenter', () => {
+						gsap.to(link, {
+							y: -8,
+							scale: 1.1,
+							textShadow: '0 0 20px rgba(255, 0, 128, 0.8)',
+							duration: 0.4,
+							ease: 'back.out(2)'
+						});
+					});
+					link.addEventListener('mouseleave', () => {
+						gsap.to(link, {
+							y: 0,
+							scale: 1,
+							textShadow: '0 0 0px rgba(255, 0, 128, 0)',
+							duration: 0.4
+						});
+					});
 				});
 
+				// Buttons - Ultra magnetic + ripple
+				document.querySelectorAll('.btn').forEach(btn => {
+					btn.addEventListener('mousemove', (e) => {
+						const rect = btn.getBoundingClientRect();
+						const x = e.clientX - rect.left - rect.width / 2;
+						const y = e.clientY - rect.top - rect.height / 2;
+						
+						gsap.to(btn, {
+							x: x * 0.4,
+							y: y * 0.4,
+							scale: 1.05,
+							duration: 0.3,
+							ease: 'power2.out'
+						});
+					});
+
+					btn.addEventListener('mouseleave', () => {
+						gsap.to(btn, {
+							x: 0,
+							y: 0,
+							scale: 1,
+							duration: 0.6,
+							ease: 'elastic.out(1, 0.6)'
+						});
+					});
+
+					btn.addEventListener('click', function(e) {
+						const ripple = document.createElement('span');
+						const rect = this.getBoundingClientRect();
+						const size = Math.max(rect.width, rect.height);
+						const x = e.clientX - rect.left - size / 2;
+						const y = e.clientY - rect.top - size / 2;
+						
+						ripple.style.width = ripple.style.height = size + 'px';
+						ripple.style.left = x + 'px';
+						ripple.style.top = y + 'px';
+						ripple.classList.add('ripple');
+						
+						this.appendChild(ripple);
+						setTimeout(() => ripple.remove(), 600);
+					});
+				});
+
+				// Feature cards - 3D tilt on hover
+				document.querySelectorAll('.feature-card').forEach(card => {
+					card.addEventListener('mousemove', (e) => {
+						const rect = card.getBoundingClientRect();
+						const x = e.clientX - rect.left;
+						const y = e.clientY - rect.top;
+						const centerX = rect.width / 2;
+						const centerY = rect.height / 2;
+						const rotateX = (y - centerY) / 12;
+						const rotateY = (centerX - x) / 12;
+
+						gsap.to(card, {
+							rotationX: rotateX,
+							rotationY: rotateY,
+							scale: 1.05,
+							duration: 0.3,
+							ease: 'power2.out',
+							transformPerspective: 1000
+						});
+					});
+
+					card.addEventListener('mouseleave', () => {
+						gsap.to(card, {
+							rotationX: 0,
+							rotationY: 0,
+							scale: 1,
+							duration: 0.7,
+							ease: 'elastic.out(1, 0.5)'
+						});
+					});
+				});
+
+				// Mouse parallax for blobs and gradients
+				let mouseX = 0, mouseY = 0;
+				let currentX = 0, currentY = 0;
+
+				document.addEventListener('mousemove', (e) => {
+					mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+					mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+				});
+
+				function animateParallax() {
+					currentX += (mouseX - currentX) * 0.1;
+					currentY += (mouseY - currentY) * 0.1;
+
+					gsap.to('.blob-1', { x: currentX * 70, y: currentY * 70, duration: 0.3, ease: 'none' });
+					gsap.to('.blob-2', { x: currentX * -50, y: currentY * -50, duration: 0.3, ease: 'none' });
+					gsap.to('.blob-3', { x: currentX * 60, y: currentY * -60, duration: 0.3, ease: 'none' });
+					gsap.to('.hero-gradient-1', { x: currentX * 40, y: currentY * 40, duration: 0.3, ease: 'none' });
+					gsap.to('.hero-gradient-2', { x: currentX * -55, y: currentY * 55, duration: 0.3, ease: 'none' });
+					gsap.to('.particle', { x: currentX * 25, y: currentY * 25, duration: 0.3, ease: 'none' });
+
+					requestAnimationFrame(animateParallax);
+				}
+
+				animateParallax();
+
 				window.__masterTimeline = master;
-				console.log('[ANIM] Master timeline created successfully');
+				console.log('[ANIM] ✨ Pro cinematic animations complete');
+
 				return master;
 
 			} catch (err) {
@@ -800,6 +1020,8 @@
 				return null;
 			}
 		}
+
+
 
 		function killAnimations() {
 			if (window.__masterTimeline) {
