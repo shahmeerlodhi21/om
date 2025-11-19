@@ -7,6 +7,7 @@
 	<title>Only Models</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -95,7 +96,20 @@
 		<canvas id="particle-canvas"></canvas>
 		<div class="hero-content">
 			<div class="hero-badge">Premium Chat Service for Creators & Agencies</div>
-			<h1 id="animated-heading"><span class="heading-char">M</span><span class="heading-char">o</span><span class="heading-char">r</span><span class="heading-char">e</span><span class="heading-char">&nbsp;</span><span class="heading-char">R</span><span class="heading-char">e</span><span class="heading-char">v</span><span class="heading-char">e</span><span class="heading-char">n</span><span class="heading-char">u</span><span class="heading-char">e</span><span class="heading-char">.</span><span class="heading-char">&nbsp;</span><span class="heading-char">L</span><span class="heading-char">e</span><span class="heading-char">s</span><span class="heading-char">s</span><span class="heading-char">&nbsp;</span><span class="heading-char">E</span><span class="heading-char">f</span><span class="heading-char">f</span><span class="heading-char">o</span><span class="heading-char">r</span><span class="heading-char">t</span><span class="heading-char">.</span><br><span id="rotating-text" class="heading-char">Fully Automated</span>.</h1>
+			<h1 id="animated-heading"><span class="heading-char">M</span><span class="heading-char">o</span><span
+					class="heading-char">r</span><span class="heading-char">e</span><span
+					class="heading-char">&nbsp;</span><span class="heading-char">R</span><span
+					class="heading-char">e</span><span class="heading-char">v</span><span
+					class="heading-char">e</span><span class="heading-char">n</span><span
+					class="heading-char">u</span><span class="heading-char">e</span><span
+					class="heading-char">.</span><span class="heading-char">&nbsp;</span><span
+					class="heading-char">L</span><span class="heading-char">e</span><span
+					class="heading-char">s</span><span class="heading-char">s</span><span
+					class="heading-char">&nbsp;</span><span class="heading-char">E</span><span
+					class="heading-char">f</span><span class="heading-char">f</span><span
+					class="heading-char">o</span><span class="heading-char">r</span><span
+					class="heading-char">t</span><span class="heading-char">.</span><br><span id="rotating-text"
+					class="heading-char">Fully Automated</span>.</h1>
 			<p>Performance-Based Chat Management</p>
 
 			<div class="hero-video">
@@ -104,8 +118,9 @@
 				</video>
 				<div class="play-button" id="play-btn">
 					<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.9)" stroke="rgba(255,105,180,0.5)" stroke-width="3"/>
-						<path d="M32 25L55 40L32 55V25Z" fill="#ff69b4"/>
+						<circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.9)" stroke="rgba(255,105,180,0.5)"
+							stroke-width="3" />
+						<path d="M32 25L55 40L32 55V25Z" fill="#ff69b4" />
 					</svg>
 				</div>
 			</div>
@@ -178,7 +193,7 @@
 		<script>
 			// Additional powerful entrance animations for the hero section
 			const heroTl = gsap.timeline();
-			
+
 			// Hero container entrance with dramatic effect
 			heroTl.from(".hero", {
 				duration: 2,
@@ -188,51 +203,51 @@
 				filter: 'blur(20px)',
 				ease: "power3.out"
 			})
-			.from(".hero-content", {
-				duration: 1.5,
-				y: 100,
-				opacity: 0,
-				scale: 0.9,
-				ease: "back.out(1.7)",
-				delay: -1
-			}, "-=1")
-			.from(".hero-badge", {
-				duration: 1,
-				scale: 0,
-				rotation: 360,
-				opacity: 0,
-				filter: 'brightness(2) drop-shadow(0 0 30px rgba(255,105,180,1))',
-				ease: "elastic.out(1, 0.5)",
-				delay: -0.5
-			})
-			.from(".heading-char", {
-				duration: 1,
-				x: -50,
-				opacity: 0,
-				scale: 0.8,
-				filter: 'blur(10px)',
-				ease: "power2.out",
-				stagger: 0.05,
-				delay: -0.8
-			})
-			.from(".hero-video", {
-				duration: 1.2,
-				scale: 0.5,
-				opacity: 0,
-				rotation: 15,
-				filter: 'blur(15px) brightness(1.5)',
-				ease: "power3.out",
-				delay: -0.6
-			})
-			.from(".cta-hero", {
-				duration: 0.8,
-				y: 50,
-				opacity: 0,
-				scale: 0.7,
-				ease: "bounce.out",
-				delay: -0.4
-			});
-			
+				.from(".hero-content", {
+					duration: 1.5,
+					y: 100,
+					opacity: 0,
+					scale: 0.9,
+					ease: "back.out(1.7)",
+					delay: -1
+				}, "-=1")
+				.from(".hero-badge", {
+					duration: 1,
+					scale: 0,
+					rotation: 360,
+					opacity: 0,
+					filter: 'brightness(2) drop-shadow(0 0 30px rgba(255,105,180,1))',
+					ease: "elastic.out(1, 0.5)",
+					delay: -0.5
+				})
+				.from(".heading-char", {
+					duration: 1,
+					x: -50,
+					opacity: 0,
+					scale: 0.8,
+					filter: 'blur(10px)',
+					ease: "power2.out",
+					stagger: 0.05,
+					delay: -0.8
+				})
+				.from(".hero-video", {
+					duration: 1.2,
+					scale: 0.5,
+					opacity: 0,
+					rotation: 15,
+					filter: 'blur(15px) brightness(1.5)',
+					ease: "power3.out",
+					delay: -0.6
+				})
+				.from(".cta-hero", {
+					duration: 0.8,
+					y: 50,
+					opacity: 0,
+					scale: 0.7,
+					ease: "bounce.out",
+					delay: -0.4
+				});
+
 			// Add particle burst on hero load
 			setTimeout(() => {
 				for (let i = 0; i < 20; i++) {
@@ -249,7 +264,7 @@
 						top: 50%;
 					`;
 					document.querySelector('.hero').appendChild(particle);
-					
+
 					gsap.to(particle, {
 						duration: 2,
 						x: Math.cos(i * 18 * Math.PI / 180) * 500,
@@ -265,105 +280,260 @@
 		</script>
 	</div>
 
-	    <div class="carousel-container">
-        <div class="carousel-item" style="--zIndex: 10;">
-            <div class="carousel-box">
-                <div class="title">Paris</div>
-                <div class="num">01</div><img
-                    src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g="
-                    alt="Paris">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 9;">
-            <div class="carousel-box">
-                <div class="title">Warsaw</div>
-                <div class="num">02</div><img
-                    src="https://media.istockphoto.com/id/1150545984/it/foto/palazzo-moderno-di-lusso-con-piscina.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=Pbrai_VGc9tUviMCF1UaBErdS1YGyIVWsD29jzMZwTY="
-                    alt="Warsaw">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 8;">
-            <div class="carousel-box">
-                <div class="title">Madrid</div>
-                <div class="num">03</div><img
-                    src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I="
-                    alt="Madrid">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 7;">
-            <div class="carousel-box">
-                <div class="title">Sydney</div>
-                <div class="num">04</div><img
-                    src="https://media.istockphoto.com/id/904390980/it/foto/foto-di-architettura-contemporanea-astratta.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=_P4Wmx5nq5MeDuimpNklKCBlrLovmCyd9lfiMKeJZDs="
-                    alt="Sydney">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 6;">
-            <div class="carousel-box">
-                <div class="title">Istanbul</div>
-                <div class="num">05</div><img
-                    src="https://media.istockphoto.com/id/130408311/it/foto/piscina-allesterno-della-casa-moderna-al-crepuscolo.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=ZoVjx7uDjoHKmpM1ayW6UR1SQOoYh_xx-QMG_qeOYs0="
-                    alt="Istanbul">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 5;">
-            <div class="carousel-box">
-                <div class="title">Prague</div>
-                <div class="num">06</div><img
-                    src="https://media.istockphoto.com/id/1299954175/it/foto/villa-cubica-moderna.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=DhGhb3c1E3DW_fbrWJ_R_Zh0Lbwu6syFeRLsKlZ9no8="
-                    alt="Prague">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 4;">
-            <div class="carousel-box">
-                <div class="title">Munich</div>
-                <div class="num">07</div><img
-                    src="https://media.istockphoto.com/id/926689776/it/foto/vista-ad-angolo-basso-dei-grattacieli-di-new-york.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=DmEB0Ty7ZwDnBoU5SuA8FNevOp4G1UcECw5aS4vA9A8="
-                    alt="Munich">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 3;">
-            <div class="carousel-box">
-                <div class="title">Venice</div>
-                <div class="num">08</div><img
-                    src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I="
-                    alt="Venice">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 2;">
-            <div class="carousel-box">
-                <div class="title">Oslo</div>
-                <div class="num">09</div><img
-                    src="https://media.istockphoto.com/id/184316397/it/foto/londra-edifici-aziendali.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=XqrRxEPzFnwRFk7PQrCiu9-9jLEzWToYfdw46S8B0Mu0="
-                    alt="Oslo">
-            </div>
-        </div>
-        <div class="carousel-item" style="--zIndex: 1;">
-            <div class="carousel-box">
-                <div class="title">London</div>
-                <div class="num">10</div><img
-                    src="https://media.istockphoto.com/id/184619832/it/foto/distretto-finanziario-al-crepuscolo-londra.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=RAThrJOBY6vhlT6-kQpu9-9jLEzWToYfdw46S8B0Mu0="
-                    alt="London">
-            </div>
-        </div>
-    </div>
+	<div class="cards-container">
+		<div class="sticky-section">
+			<div class="w-layout-blockcontainer section-wrap w-container">
+				<div class="nav-fixed">
+					<div class="fixed-nav-wrapper">
+						<h4 class="fixed-nav">01</h4>
+						<h4 class="fixed-nav">02</h4>
+						<h4 class="fixed-nav">03</h4>
+					</div>
+				</div>
+				<div class="card-wrap first-card">
+					<div class="color-wrap-sticky sticky-one sticky-statement-scroll section-wrap-flex"
+						style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+						<div class="sticky-heading-wrap">
+							<div class="w-embed">
+								<h2 class="sticky-headfing"><span class="js-text-underline"
+										style="--animation: title-underline;"><strong>Zoom fast</strong>
+										<svg class="svg-underline" width="344" height="16" viewBox="0 0 430 16"
+											fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path class="top-line" d="M2 7.94972C135.772 5.76704 284.063 2 418.739 2"
+												stroke="#1F1416" stroke-width="3" stroke-linecap="round"
+												style="--length: 416.7873840332031;"></path>
+											<path class="bottom-line"
+												d="M153.261 13.8994C245.06 13.3972 336.602 11.6868 428 10.3296"
+												stroke="#1F1416" stroke-width="3" stroke-linecap="round"
+												style="--length: 274.763427734375;"></path>
+										</svg>
+									</span><span class="sml-txt 2">on a direct path to excellence </span></h2>
+							</div>
+						</div>
+						<div class="flex-row row-reverse align-center">
+							<div class="image-column img-out"><img class="detail-img-sticky inr-img"
+									src="https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/653645c4329742981f81057f_64ef3d99417007f9e9fd8bf3_earning-graph%20(2).webp"
+									alt="Creator consulting"
+									style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+									sizes="(max-width: 767px) 100vw, 720.9765625px"
+									data-w-id="d6a21f1d-a0d8-5e2f-a869-f06b8ff6e4e9" loading="lazy"
+									srcset="https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/653645c4329742981f81057f_64ef3d99417007f9e9fd8bf3_earning-graph%20(2)-p-500.webp 500w, https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/653645c4329742981f81057f_64ef3d99417007f9e9fd8bf3_earning-graph%20(2).webp 721w">
+							</div>
+							<div class="desc-column padding-left-medium">
+								<h2 class="hdgh2 text-start">Creator consulting</h2>
+								<p class="description">We identify what's driving your growth, where you're leaving
+									money on
+									the table, and how to fix it. From verticals to content usage plans, we build a
+									roadmap
+									that's tailored to you - not copied from another<br>creator. Then our team runs the
+									execution.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-wrap second-card">
+					<div class="color-wrap-sticky sticky-two sticky-statement-scroll section-wrap-flex"
+						style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+						<div class="flex-row reverse">
+							<div class="image-column img-out">
+								<img class="detail-img inr-img"
+									src="https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/64e84a1a6a23d6071aac3d54_Magnetize-img.png"
+									alt="Magnetize your audience"
+									style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+									sizes="(max-width: 767px) 100vw, 720.9765625px"
+									data-w-id="d6a21f1d-a0d8-5e2f-a869-f06b8ff6e4f3" loading="lazy"
+									srcset="https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/64e84a1a6a23d6071aac3d54_Magnetize-img-p-500.png 500w, https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/64e84a1a6a23d6071aac3d54_Magnetize-img.png 721w">
+							</div>
+							<div class="desc-column padding-right-medium">
+								<div class="sticky-heading-wrap">
+									<div class="svg-line-wrap w-embed">
+										<h2 class="hdgh2" style="text-align:start;"><span class="sml-txt 2"></span><span
+												class="js-text-underline"
+												style="--animation: title-underline;">Strategic
+												Growth <svg class="svg-underline" width="261" height="26"
+													viewBox="0 0 448 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path class="top-line"
+														d="M73.3804 22.8573C166.579 20.3422 259.873 18.2243 352.949 14.802C356.34 14.6774 368.152 14.4647 374.62 13.754"
+														stroke="#000000" stroke-width="4" stroke-linecap="round"
+														style="--length: 301.3871154785156;"></path>
+													<path class="bottom-line"
+														d="M1.99989 20.173C62.4908 14.9745 123.484 13.4458 184.125 11.1428C262.309 8.17355 340.509 5.23404 418.755 4.25167C427.273 4.14472 452.789 3.54451 444.281 3.07897"
+														stroke="#000000" stroke-width="4" stroke-linecap="round"
+														style="--length: 446.1242370605469;"></path>
+												</svg>
+											</span></h2>
+									</div>
+									<p class="description">We don't just post - we engineer a tailor-made funnel with
+										high
+										spending traffic. Our team builds a custom growth funnel across X, TikTok, IG,
+										Threads and more, driving high-quality subs into your page. Every post, story,
+										caption, comments, and campaign is designed to convert and matched to your
+										online
+										persona.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-wrap third-card">
+					<div class="color-wrap-sticky sticky-three sticky-statement-scroll section-wrap-flex"
+						style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+						<div class="flex-row row-reverse align-bottom">
+							<div class="image-column"><img class="detail-img"
+									src="https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/64e8568f677723f0dbe37ac7_In-House%20Chatters.png"
+									alt="In-House Chatters"
+									style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+									sizes="(max-width: 767px) 100vw, 720.9765625px"
+									data-w-id="d6a21f1d-a0d8-5e2f-a869-f06b8ff6e4fd" loading="lazy"
+									srcset="https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/64e8568f677723f0dbe37ac7_In-House%20Chatters-p-500.png 500w, https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/64e8568f677723f0dbe37ac7_In-House%20Chatters.png 721w">
+							</div>
+							<div class="desc-column padding-left-medium bottom-space">
+								<div class="svg-line-wrap w-embed">
+									<h2 class="hdgh2" style="text-align:start;"><span class="js-text-underline"
+											style="--animation: title-underline;">In-House
+											<svg class="svg-underline" width="344" height="16" viewBox="0 0 430 16"
+												fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path class="top-line"
+													d="M2 7.94972C135.772 5.76704 284.063 2 418.739 2" stroke="#1F1416"
+													stroke-width="3" stroke-linecap="round"
+													style="--length: 416.7873840332031;"></path>
+												<path class="bottom-line"
+													d="M153.261 13.8994C245.06 13.3972 336.602 11.6868 428 10.3296"
+													stroke="#1F1416" stroke-width="3" stroke-linecap="round"
+													style="--length: 274.763427734375;"></path>
+											</svg>
+										</span><span class="sml-txt 2">Chatters</span></h2>
+								</div>
+								<p class="description"><strong class="para-sub-head"><em>Operations at its
+											best<br></em></strong><br>Our U.S .- based chat team is trained to speak in
+									your
+									requested tone &amp; persona. Every message is crafted to feel personal, build
+									trust,
+									and guide fans toward deeper engagement - all without you needing to touch the
+									inbox.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(".carousel-container", {
-            "--scroll-active": 0.9,
-            scrollTrigger: {
-                trigger: ".carousel-container",
-                start: "top top",
-                end: "+=200%",
-                scrub: true,
-                pin: true
-            }
-        });
-    </script>
+
+	<div class="carousel-container">
+		<div class="carousel-item" style="--zIndex: 10;">
+			<div class="carousel-box">
+				<div class="title">Paris</div>
+				<div class="num">01</div><img
+					src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g="
+					alt="Paris">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 9;">
+			<div class="carousel-box">
+				<div class="title">Warsaw</div>
+				<div class="num">02</div><img
+					src="https://media.istockphoto.com/id/1150545984/it/foto/palazzo-moderno-di-lusso-con-piscina.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=Pbrai_VGc9tUviMCF1UaBErdS1YGyIVWsD29jzMZwTY="
+					alt="Warsaw">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 8;">
+			<div class="carousel-box">
+				<div class="title">Madrid</div>
+				<div class="num">03</div><img
+					src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I="
+					alt="Madrid">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 7;">
+			<div class="carousel-box">
+				<div class="title">Sydney</div>
+				<div class="num">04</div><img
+					src="https://media.istockphoto.com/id/904390980/it/foto/foto-di-architettura-contemporanea-astratta.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=_P4Wmx5nq5MeDuimpNklKCBlrLovmCyd9lfiMKeJZDs="
+					alt="Sydney">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 6;">
+			<div class="carousel-box">
+				<div class="title">Istanbul</div>
+				<div class="num">05</div><img
+					src="https://media.istockphoto.com/id/130408311/it/foto/piscina-allesterno-della-casa-moderna-al-crepuscolo.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=ZoVjx7uDjoHKmpM1ayW6UR1SQOoYh_xx-QMG_qeOYs0="
+					alt="Istanbul">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 5;">
+			<div class="carousel-box">
+				<div class="title">Prague</div>
+				<div class="num">06</div><img
+					src="https://media.istockphoto.com/id/1299954175/it/foto/villa-cubica-moderna.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=DhGhb3c1E3DW_fbrWJ_R_Zh0Lbwu6syFeRLsKlZ9no8="
+					alt="Prague">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 4;">
+			<div class="carousel-box">
+				<div class="title">Munich</div>
+				<div class="num">07</div><img
+					src="https://media.istockphoto.com/id/926689776/it/foto/vista-ad-angolo-basso-dei-grattacieli-di-new-york.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=DmEB0Ty7ZwDnBoU5SuA8FNevOp4G1UcECw5aS4vA9A8="
+					alt="Munich">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 3;">
+			<div class="carousel-box">
+				<div class="title">Venice</div>
+				<div class="num">08</div><img
+					src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I="
+					alt="Venice">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 2;">
+			<div class="carousel-box">
+				<div class="title">Oslo</div>
+				<div class="num">09</div><img
+					src="https://media.istockphoto.com/id/184316397/it/foto/londra-edifici-aziendali.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=XqrRxEPzFnwRFk7PQrCiu9-9jLEzWToYfdw46S8B0Mu0="
+					alt="Oslo">
+			</div>
+		</div>
+		<div class="carousel-item" style="--zIndex: 1;">
+			<div class="carousel-box">
+				<div class="title">London</div>
+				<div class="num">10</div><img
+					src="https://media.istockphoto.com/id/184619832/it/foto/distretto-finanziario-al-crepuscolo-londra.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=RAThrJOBY6vhlT6-kQpu9-9jLEzWToYfdw46S8B0Mu0="
+					alt="London">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		gsap.registerPlugin(ScrollTrigger);
+
+		// Entrance animation for carousel container
+		gsap.from(".carousel-container", {
+			duration: 1.5,
+			y: 100,
+			opacity: 0,
+			scale: 0.8,
+			ease: "power3.out",
+			scrollTrigger: {
+				trigger: ".carousel-container",
+				start: "top 80%",
+				end: "top 50%",
+				toggleActions: "play none none reverse"
+			}
+		});
+
+		gsap.to(".carousel-container", {
+			"--scroll-active": 0.9,
+			scrollTrigger: {
+				trigger: ".carousel-container",
+				start: "top top",
+				end: "+=200%",
+				scrub: true,
+				pin: true
+			}
+		});
+	</script>
 
 	<script>
 		// GSAP animations for header elements
@@ -437,75 +607,75 @@
 			});
 		});
 
-	// ========== ULTRA POWERFUL HERO BADGE ENTRANCE ==========
-	const rotatingWords = [
-		"Fully Automated",
-		"Growth Focused",
-		"Revenue Driven"
-	];
-	let currentWordIndex = 0;
-	let charIndex = 0;
-	let isDeleting = false;
-	const rotatingTextEl = document.getElementById("rotating-text");
+		// ========== ULTRA POWERFUL HERO BADGE ENTRANCE ==========
+		const rotatingWords = [
+			"Fully Automated",
+			"Growth Focused",
+			"Revenue Driven"
+		];
+		let currentWordIndex = 0;
+		let charIndex = 0;
+		let isDeleting = false;
+		const rotatingTextEl = document.getElementById("rotating-text");
 
-	// Initial fade in for heading
-	gsap.from("#animated-heading", {
-		duration: 1,
-		y: 30,
-		opacity: 0,
-		ease: "power3.out",
-		delay: 0.5
-	});
+		// Initial fade in for heading
+		gsap.from("#animated-heading", {
+			duration: 1,
+			y: 30,
+			opacity: 0,
+			ease: "power3.out",
+			delay: 0.5
+		});
 
-	function typeWord() {
-		const currentWord = rotatingWords[currentWordIndex];
-		
-		if (!isDeleting) {
-			// Typing
-			if (charIndex < currentWord.length) {
-				rotatingTextEl.textContent = currentWord.substring(0, charIndex + 1);
-				charIndex++;
-				setTimeout(typeWord, 100);
+		function typeWord() {
+			const currentWord = rotatingWords[currentWordIndex];
+
+			if (!isDeleting) {
+				// Typing
+				if (charIndex < currentWord.length) {
+					rotatingTextEl.textContent = currentWord.substring(0, charIndex + 1);
+					charIndex++;
+					setTimeout(typeWord, 100);
+				} else {
+					// Finished typing, wait then start deleting
+					isDeleting = true;
+					setTimeout(typeWord, 2000);
+				}
 			} else {
-				// Finished typing, wait then start deleting
-				isDeleting = true;
-				setTimeout(typeWord, 2000);
-			}
-		} else {
-			// Deleting
-			if (charIndex > 0) {
-				rotatingTextEl.textContent = currentWord.substring(0, charIndex - 1);
-				charIndex--;
-				setTimeout(typeWord, 50);
-			} else {
-				// Finished deleting, move to next word
-				isDeleting = false;
-				currentWordIndex = (currentWordIndex + 1) % rotatingWords.length;
-				setTimeout(typeWord, 500);
+				// Deleting
+				if (charIndex > 0) {
+					rotatingTextEl.textContent = currentWord.substring(0, charIndex - 1);
+					charIndex--;
+					setTimeout(typeWord, 50);
+				} else {
+					// Finished deleting, move to next word
+					isDeleting = false;
+					currentWordIndex = (currentWordIndex + 1) % rotatingWords.length;
+					setTimeout(typeWord, 500);
+				}
 			}
 		}
-	}
 
-	setTimeout(typeWord, 1500);
+		setTimeout(typeWord, 1500);
 
-	// ========== ULTRA POWERFUL PARAGRAPH ENTRANCE ==========
-	const para = document.querySelector(".hero-content p");
-	const paraText = para.textContent;
-	
-	// Split into characters
-	para.innerHTML = paraText.split('').map((char, i) => 
-		`<span class="para-char" style="--char-index: ${i}">${char === ' ' ? '&nbsp;' : char}</span>`
-	).join('');
-	
-	const paraChars = para.querySelectorAll('.para-char');
-	
-	// Create explosion particles for each character
-	paraChars.forEach((char, i) => {
-		// Create 8 particles per character
-		for(let p = 0; p < 8; p++) {
-			const particle = document.createElement('span');
-			particle.textContent = char.textContent;
-			particle.style.cssText = `
+		// ========== ULTRA POWERFUL PARAGRAPH ENTRANCE ==========
+		const para = document.querySelector(".hero-content p");
+		const paraText = para.textContent;
+
+		// Split into characters
+		para.innerHTML = paraText.split('').map((char, i) =>
+			`<span class="para-char" style="--char-index: ${i}">${char === ' ' ? '&nbsp;' : char}</span>`
+		).join('');
+
+		const paraChars = para.querySelectorAll('.para-char');
+
+		// Create explosion particles for each character
+		paraChars.forEach((char, i) => {
+			// Create 8 particles per character
+			for (let p = 0; p < 8; p++) {
+				const particle = document.createElement('span');
+				particle.textContent = char.textContent;
+				particle.style.cssText = `
 				position: absolute;
 				left: ${char.offsetLeft}px;
 				top: ${char.offsetTop}px;
@@ -514,116 +684,116 @@
 				font-size: inherit;
 				z-index: 1000;
 			`;
-			para.appendChild(particle);
-			
-			const angle = (p * 45) * Math.PI / 180;
-			gsap.timeline()
-				.set(particle, {
-					scale: 1,
-					opacity: 1
-				})
-				.to(particle, {
-					duration: 1.2,
-					x: Math.cos(angle) * 150,
-					y: Math.sin(angle) * 150,
-					scale: 0,
-					opacity: 0,
-					rotation: 360,
-					filter: 'blur(10px)',
-					ease: "power3.out",
-					delay: 1.5 + i * 0.02,
-					onComplete: () => particle.remove()
-				});
-		}
-	});
-	
-	// Main character entrance - ULTRA EXPLOSIVE
-	paraChars.forEach((char, i) => {
-		gsap.timeline()
-			.from(char, {
-				duration: 0.01,
-				scale: 10,
-				opacity: 0,
-				filter: 'blur(40px) brightness(5)',
-				rotation: 0
-			})
-			.to(char, {
-				duration: 1,
-				scale: 1,
-				opacity: 1,
-				filter: 'blur(0px) brightness(1)',
-				rotation: 720,
-				y: 0,
-				ease: "elastic.out(1, 0.5)",
-				delay: 1.5 + i * 0.02
-			})
-			.to(char, {
-				duration: 0.3,
-				scale: 1.3,
-				filter: 'brightness(1.5) drop-shadow(0 0 10px rgba(255,105,180,1))',
-				ease: "power2.out"
-			}, "-=0.2")
-			.to(char, {
-				duration: 0.3,
-				scale: 1,
-				filter: 'brightness(1) drop-shadow(0 0 5px rgba(255,105,180,0.5))',
-				ease: "back.in(2)"
-			});
-	});
-	
-	// Continuous wave animations
-	function paraWaveEffect() {
+				para.appendChild(particle);
+
+				const angle = (p * 45) * Math.PI / 180;
+				gsap.timeline()
+					.set(particle, {
+						scale: 1,
+						opacity: 1
+					})
+					.to(particle, {
+						duration: 1.2,
+						x: Math.cos(angle) * 150,
+						y: Math.sin(angle) * 150,
+						scale: 0,
+						opacity: 0,
+						rotation: 360,
+						filter: 'blur(10px)',
+						ease: "power3.out",
+						delay: 1.5 + i * 0.02,
+						onComplete: () => particle.remove()
+					});
+			}
+		});
+
+		// Main character entrance - ULTRA EXPLOSIVE
 		paraChars.forEach((char, i) => {
 			gsap.timeline()
-				.to(char, {
-					y: -20,
-					scale: 1.4,
-					rotation: 10,
-					color: '#ff69b4',
-					textShadow: '0 0 20px #ff69b4, 0 0 40px #8a2be2',
-					filter: 'brightness(1.8) drop-shadow(0 0 15px rgba(255,105,180,1))',
-					duration: 0.5,
-					delay: i * 0.05,
-					ease: "power2.out"
+				.from(char, {
+					duration: 0.01,
+					scale: 10,
+					opacity: 0,
+					filter: 'blur(40px) brightness(5)',
+					rotation: 0
 				})
 				.to(char, {
+					duration: 1,
+					scale: 1,
+					opacity: 1,
+					filter: 'blur(0px) brightness(1)',
+					rotation: 720,
 					y: 0,
+					ease: "elastic.out(1, 0.5)",
+					delay: 1.5 + i * 0.02
+				})
+				.to(char, {
+					duration: 0.3,
+					scale: 1.3,
+					filter: 'brightness(1.5) drop-shadow(0 0 10px rgba(255,105,180,1))',
+					ease: "power2.out"
+				}, "-=0.2")
+				.to(char, {
+					duration: 0.3,
+					scale: 1,
+					filter: 'brightness(1) drop-shadow(0 0 5px rgba(255,105,180,0.5))',
+					ease: "back.in(2)"
+				});
+		});
+
+		// Continuous wave animations
+		function paraWaveEffect() {
+			paraChars.forEach((char, i) => {
+				gsap.timeline()
+					.to(char, {
+						y: -20,
+						scale: 1.4,
+						rotation: 10,
+						color: '#ff69b4',
+						textShadow: '0 0 20px #ff69b4, 0 0 40px #8a2be2',
+						filter: 'brightness(1.8) drop-shadow(0 0 15px rgba(255,105,180,1))',
+						duration: 0.5,
+						delay: i * 0.05,
+						ease: "power2.out"
+					})
+					.to(char, {
+						y: 0,
+						scale: 1,
+						rotation: 0,
+						color: 'rgba(255, 255, 255, 0.9)',
+						textShadow: '0 0 8px rgba(255,105,180,0.6)',
+						filter: 'brightness(1) drop-shadow(0 0 5px rgba(255,105,180,0.5))',
+						duration: 0.5,
+						ease: "bounce.out"
+					});
+			});
+		}
+
+		setInterval(paraWaveEffect, 4000);
+
+		// Random character explosions
+		setInterval(() => {
+			const randomChar = paraChars[Math.floor(Math.random() * paraChars.length)];
+			gsap.timeline()
+				.to(randomChar, {
+					scale: 2,
+					rotation: 360,
+					color: '#ffd700',
+					textShadow: '0 0 30px #ffd700, 0 0 50px #ff69b4',
+					filter: 'brightness(2.5) drop-shadow(0 0 25px rgba(255,215,0,1))',
+					duration: 0.4,
+					ease: "power2.out"
+				})
+				.to(randomChar, {
 					scale: 1,
 					rotation: 0,
 					color: 'rgba(255, 255, 255, 0.9)',
 					textShadow: '0 0 8px rgba(255,105,180,0.6)',
 					filter: 'brightness(1) drop-shadow(0 0 5px rgba(255,105,180,0.5))',
 					duration: 0.5,
-					ease: "bounce.out"
+					ease: "elastic.out(1, 0.5)"
 				});
-		});
-	}
-	
-	setInterval(paraWaveEffect, 4000);
-	
-	// Random character explosions
-	setInterval(() => {
-		const randomChar = paraChars[Math.floor(Math.random() * paraChars.length)];
-		gsap.timeline()
-			.to(randomChar, {
-				scale: 2,
-				rotation: 360,
-				color: '#ffd700',
-				textShadow: '0 0 30px #ffd700, 0 0 50px #ff69b4',
-				filter: 'brightness(2.5) drop-shadow(0 0 25px rgba(255,215,0,1))',
-				duration: 0.4,
-				ease: "power2.out"
-			})
-			.to(randomChar, {
-				scale: 1,
-				rotation: 0,
-				color: 'rgba(255, 255, 255, 0.9)',
-				textShadow: '0 0 8px rgba(255,105,180,0.6)',
-				filter: 'brightness(1) drop-shadow(0 0 5px rgba(255,105,180,0.5))',
-				duration: 0.5,
-				ease: "elastic.out(1, 0.5)"
-			});
-	}, 1000);		gsap.from(".hero-video", {
+		}, 1000); gsap.from(".hero-video", {
 			duration: 1,
 			y: 50,
 			opacity: 0,
@@ -714,16 +884,16 @@
 
 		function animate() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			
+
 			for (let i = 0; i < particles.length; i++) {
 				particles[i].update();
 				particles[i].draw();
-				
+
 				for (let j = i + 1; j < particles.length; j++) {
 					const dx = particles[i].x - particles[j].x;
 					const dy = particles[i].y - particles[j].y;
 					const distance = Math.sqrt(dx * dx + dy * dy);
-					
+
 					if (distance < 150) {
 						const opacity = 0.3 * (1 - distance / 150);
 						const gradient = ctx.createLinearGradient(
@@ -741,7 +911,7 @@
 					}
 				}
 			}
-			
+
 			requestAnimationFrame(animate);
 		}
 
@@ -774,6 +944,253 @@
 				playButton.style.pointerEvents = 'auto';
 			});
 		}
+	</script>
+
+	<script>
+		// Ultra-Powerful Cards Container Animations
+		gsap.registerPlugin(ScrollTrigger);
+
+		// Animate nav-fixed numbers on section enter
+		gsap.from(".fixed-nav", {
+			duration: 1,
+			scale: 0,
+			rotation: 180,
+			opacity: 0,
+			stagger: 0.2,
+			ease: "back.out(1.7)",
+			scrollTrigger: {
+				trigger: ".cards-container",
+				start: "top 80%",
+				toggleActions: "play none none reverse"
+			}
+		});
+
+		// First Card Animations
+		const firstCardTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".first-card",
+				start: "top 75%",
+				toggleActions: "play none none reverse"
+			}
+		});
+
+		firstCardTl
+			.from(".first-card .sticky-headfing", {
+				duration: 1.2,
+				y: 50,
+				opacity: 0,
+				scale: 0.9,
+				filter: 'blur(10px)',
+				ease: "power3.out"
+			})
+			.from(".first-card .sticky-headfing strong", {
+				duration: 0.8,
+				scale: 0,
+				rotation: 360,
+				color: '#ff69b4',
+				textShadow: '0 0 20px #ff69b4',
+				ease: "elastic.out(1, 0.5)"
+			}, "-=0.5")
+			.from(".first-card .svg-underline .top-line", {
+				duration: 1,
+				strokeDasharray: "416.7873840332031",
+				strokeDashoffset: "416.7873840332031",
+				ease: "power2.out"
+			}, "-=0.8")
+			.from(".first-card .svg-underline .bottom-line", {
+				duration: 1,
+				strokeDasharray: "274.763427734375",
+				strokeDashoffset: "274.763427734375",
+				ease: "power2.out"
+			}, "-=0.8")
+			.from(".first-card .sml-txt", {
+				duration: 0.8,
+				x: -30,
+				opacity: 0,
+				filter: 'blur(5px)',
+				ease: "power2.out"
+			}, "-=0.6")
+			.from(".first-card .detail-img-sticky", {
+				duration: 1.5,
+				x: 100,
+				opacity: 0,
+				scale: 0.8,
+				rotation: 15,
+				filter: 'blur(15px) brightness(1.2)',
+				ease: "power3.out"
+			}, "-=1")
+			.from(".first-card .hdgh2", {
+				duration: 1,
+				y: 30,
+				opacity: 0,
+				scale: 0.95,
+				ease: "back.out(1.7)"
+			}, "-=1.2")
+			.from(".first-card .description", {
+				duration: 1,
+				y: 20,
+				opacity: 0,
+				filter: 'blur(5px)',
+				ease: "power2.out"
+			}, "-=1");
+
+		// Second Card Animations
+		const secondCardTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".second-card",
+				start: "top 75%",
+				toggleActions: "play none none reverse"
+			}
+		});
+
+		secondCardTl
+			.from(".second-card .hdgh2", {
+				duration: 1.2,
+				x: -50,
+				opacity: 0,
+				scale: 0.9,
+				filter: 'blur(10px)',
+				ease: "power3.out"
+			})
+			.from(".second-card .svg-underline .top-line", {
+				duration: 1,
+				strokeDasharray: "301.3871154785156",
+				strokeDashoffset: "301.3871154785156",
+				ease: "power2.out"
+			}, "-=0.8")
+			.from(".second-card .svg-underline .bottom-line", {
+				duration: 1,
+				strokeDasharray: "446.1242370605469",
+				strokeDashoffset: "446.1242370605469",
+				ease: "power2.out"
+			}, "-=0.8")
+			.from(".second-card .detail-img", {
+				duration: 1.5,
+				x: -100,
+				opacity: 0,
+				scale: 0.8,
+				rotation: -15,
+				filter: 'blur(15px) brightness(1.2)',
+				ease: "power3.out"
+			}, "-=1")
+			.from(".second-card .description", {
+				duration: 1,
+				y: 20,
+				opacity: 0,
+				filter: 'blur(5px)',
+				ease: "power2.out"
+			}, "-=1");
+
+		// Third Card Animations
+		const thirdCardTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".third-card",
+				start: "top 75%",
+				toggleActions: "play none none reverse"
+			}
+		});
+
+		thirdCardTl
+			.from(".third-card .hdgh2", {
+				duration: 1.2,
+				y: 50,
+				opacity: 0,
+				scale: 0.9,
+				filter: 'blur(10px)',
+				ease: "power3.out"
+			})
+			.from(".third-card .svg-underline .top-line", {
+				duration: 1,
+				strokeDasharray: "416.7873840332031",
+				strokeDashoffset: "416.7873840332031",
+				ease: "power2.out"
+			}, "-=0.8")
+			.from(".third-card .svg-underline .bottom-line", {
+				duration: 1,
+				strokeDasharray: "274.763427734375",
+				strokeDashoffset: "274.763427734375",
+				ease: "power2.out"
+			}, "-=0.8")
+			.from(".third-card .sml-txt", {
+				duration: 0.8,
+				x: 30,
+				opacity: 0,
+				filter: 'blur(5px)',
+				ease: "power2.out"
+			}, "-=0.6")
+			.from(".third-card .detail-img", {
+				duration: 1.5,
+				x: 100,
+				opacity: 0,
+				scale: 0.8,
+				rotation: 15,
+				filter: 'blur(15px) brightness(1.2)',
+				ease: "power3.out"
+			}, "-=1")
+			.from(".third-card .para-sub-head", {
+				duration: 0.8,
+				scale: 0,
+				rotation: 180,
+				color: '#ff69b4',
+				textShadow: '0 0 20px #ff69b4',
+				ease: "elastic.out(1, 0.5)"
+			}, "-=1.2")
+			.from(".third-card .description", {
+				duration: 1,
+				y: 20,
+				opacity: 0,
+				filter: 'blur(5px)',
+				ease: "power2.out"
+			}, "-=1");
+
+		// Add particle burst on cards enter
+		ScrollTrigger.create({
+			trigger: ".cards-container",
+			start: "top 80%",
+			onEnter: () => {
+				for (let i = 0; i < 30; i++) {
+					const particle = document.createElement('div');
+					particle.style.cssText = `
+						position: absolute;
+						width: 8px;
+						height: 8px;
+						background: radial-gradient(circle, rgba(255,105,180,1) 0%, rgba(138,43,226,0.5) 100%);
+						border-radius: 50%;
+						pointer-events: none;
+						z-index: 1000;
+						left: 50%;
+						top: 50%;
+					`;
+					document.querySelector('.cards-container').appendChild(particle);
+
+					gsap.to(particle, {
+						duration: 3,
+						x: Math.cos(i * 12 * Math.PI / 180) * 600,
+						y: Math.sin(i * 12 * Math.PI / 180) * 600,
+						scale: 0,
+						opacity: 0,
+						rotation: 1080,
+						ease: "power2.out",
+						onComplete: () => particle.remove()
+					});
+				}
+			}
+		});
+
+		// Continuous glow effects on headings
+		gsap.to(".sticky-headfing strong, .hdgh2", {
+			duration: 2,
+			textShadow: '0 0 20px rgba(255,105,180,0.8), 0 0 40px rgba(255,105,180,0.4)',
+			repeat: -1,
+			yoyo: true,
+			ease: "power2.inOut",
+			scrollTrigger: {
+				trigger: ".cards-container",
+				start: "top 50%",
+				end: "bottom 50%",
+				toggleActions: "play none none reverse"
+			}
+		});
 	</script>
 </body>
 
